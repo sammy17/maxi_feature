@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 286, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_7_9', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_3', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:02.170+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 190, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_5_3', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_3', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:02.019+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 94, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_5_2', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:01.247+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 46, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_2_5', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:01.223+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 22, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_1_2', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:01.215+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 10, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_0_5', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:01.208+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 4, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_77_0_2', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:01.201+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 3, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_60', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:01.193+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 2, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:76) of variable 'tmp_60', feature_maxi/feature.cpp:76 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:00.939+0530" type="Warning"/>
+        <logs message="@W [SCHED-68] Unable to enforce a carried dependency constraint (II = 1, distance = 1)&#xA;   between 'store' operation (feature_maxi/feature.cpp:75) of variable 'tmp_58', feature_maxi/feature.cpp:75 on array 'featureHist', feature_maxi/feature.cpp:50 and 'load' operation ('featureHist_load_1', feature_maxi/feature.cpp:75) on array 'featureHist', feature_maxi/feature.cpp:50." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:45:00.898+0530" type="Warning"/>
+        <logs message="@W [XFORM-104] Completely partitioning array 'boundingBoxes' (feature_maxi/feature.cpp:46) accessed through non-constant indices on dimension 1 (feature_maxi/feature.cpp:49:1), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="feature_maxi" solutionName="solution1" date="2017-11-20T01:44:49.263+0530" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

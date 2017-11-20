@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="feature.cpp" path="/home/chathura/feature_IP/maxi/feature_maxi/feature.cpp"/>
+    <originFiles name="feature.h" path="/home/chathura/feature_IP/maxi/feature_maxi/feature.h"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>
