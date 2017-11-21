@@ -1,0 +1,23 @@
+@I [SIM-47] Using XSIM for RTL simulation.
+@I [SIM-14] Instrumenting C test bench ...
+@W [SIM-369] AXI_master port 'gmem' has a depth of '38400'. Insufficient depth may result in simulation mismatch or freeze.
+@W [SIM-369] AXI_master port 'bounding' has a depth of '1'. Insufficient depth may result in simulation mismatch or freeze.
+@W [SIM-369] AXI_master port 'featureh' has a depth of '1'. Insufficient depth may result in simulation mismatch or freeze.
+@E [SIM-44] Input file: F:/maxi/feature_maxi/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp.line.cpp
+Output file: F:\maxi\feature_maxi\solution1\sim\autowrap\testbench\test.cpp_pre.cpp.tb.cpp.line
+Done.
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+@E [SIM-44] Input file: F:/maxi/feature_maxi/solution1/./sim/autowrap/testbench/feature.cpp_pre.cpp.line.cpp
+Output file: F:\maxi\feature_maxi\solution1\sim\autowrap\testbench\feature.cpp_pre.cpp.tb.cpp.line
+Done.
+Picked up _JAVA_OPTIONS: -Djava.net.preferIPv4Stack=true
+   Build using "F:/Xilinx/Vivado_HLS/2015.4/msys/bin/g++.exe"
+   Compiling apatb_feature.cpp
+   Compiling feature.cpp_pre.cpp
+   Compiling test.cpp_pre.cpp
+   Generating cosim.tv.exe
+@E [SIM-317] C++ compile error.
+@E [SIM-321] EXE file generate failed.
+@E [SIM-321] EXE file generate failed.
+@E [SIM-331] Aborting co-simulation: C simulation failed, compilation errors.
+@E [SIM-5] *** C/RTL co-simulation file generate finished: FAIL ***

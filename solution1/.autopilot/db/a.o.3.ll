@@ -1,6 +1,6 @@
-; ModuleID = '/home/chathura/feature_IP/maxi/feature_maxi/solution1/.autopilot/db/a.o.3.bc'
+; ModuleID = 'F:/maxi/feature_maxi/solution1/.autopilot/db/a.o.3.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
-target triple = "x86_64-unknown-linux-gnu"
+target triple = "x86_64-w64-mingw32"
 
 @mode3 = internal constant [10 x i8] c"s_axilite\00" ; [#uses=1 type=[10 x i8]*]
 @mode1 = internal constant [10 x i8] c"s_axilite\00" ; [#uses=1 type=[10 x i8]*]
@@ -18,7 +18,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @bundle = internal constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str4 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str29 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
-@p_str1812 = private unnamed_addr constant [12 x i8] c"hls_label_1\00", align 1 ; [#uses=2 type=[12 x i8]*]
+@p_str1812 = private unnamed_addr constant [12 x i8] c"hls_label_2\00", align 1 ; [#uses=2 type=[12 x i8]*]
 @p_str1810 = private unnamed_addr constant [9 x i8] c"CRTL_BUS\00", align 1 ; [#uses=2 type=[9 x i8]*]
 @p_str1809 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1 ; [#uses=1 type=[10 x i8]*]
 @p_str1808 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=5 type=[6 x i8]*]
@@ -3004,7 +3004,7 @@ entry:
 }
 
 ; [#uses=1]
-declare void @_GLOBAL__I_a() nounwind section ".text.startup"
+declare void @_GLOBAL__I_a() nounwind
 
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!0}
@@ -3027,14 +3027,14 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !13 = metadata !{i32 786688, metadata !14, metadata !"boundingBoxes", metadata !16, i32 46, metadata !27, i32 0, i32 0} ; [ DW_TAG_auto_variable ]
 !14 = metadata !{i32 786443, metadata !15, i32 40, i32 74, metadata !16, i32 4} ; [ DW_TAG_lexical_block ]
 !15 = metadata !{i32 786478, i32 0, metadata !16, metadata !"feature", metadata !"feature", metadata !"_Z7featurePjPtS0_", metadata !16, i32 40, metadata !17, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !25, i32 40} ; [ DW_TAG_subprogram ]
-!16 = metadata !{i32 786473, metadata !"feature_maxi/feature.cpp", metadata !"/home/chathura/feature_IP/maxi", null} ; [ DW_TAG_file_type ]
+!16 = metadata !{i32 786473, metadata !"feature_maxi/feature.cpp", metadata !"f:/maxi", null} ; [ DW_TAG_file_type ]
 !17 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !18, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !18 = metadata !{null, metadata !19, metadata !22, metadata !22}
 !19 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !20} ; [ DW_TAG_pointer_type ]
-!20 = metadata !{i32 786454, null, metadata !"uint32_t", metadata !16, i32 51, i64 0, i64 0, i64 0, i32 0, metadata !21} ; [ DW_TAG_typedef ]
+!20 = metadata !{i32 786454, null, metadata !"uint32_t", metadata !16, i32 40, i64 0, i64 0, i64 0, i32 0, metadata !21} ; [ DW_TAG_typedef ]
 !21 = metadata !{i32 786468, null, metadata !"unsigned int", null, i32 0, i64 32, i64 32, i64 0, i32 0, i32 7} ; [ DW_TAG_base_type ]
 !22 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !23} ; [ DW_TAG_pointer_type ]
-!23 = metadata !{i32 786454, null, metadata !"uint16_t", metadata !16, i32 49, i64 0, i64 0, i64 0, i32 0, metadata !24} ; [ DW_TAG_typedef ]
+!23 = metadata !{i32 786454, null, metadata !"uint16_t", metadata !16, i32 38, i64 0, i64 0, i64 0, i32 0, metadata !24} ; [ DW_TAG_typedef ]
 !24 = metadata !{i32 786468, null, metadata !"unsigned short", null, i32 0, i64 16, i64 16, i64 0, i32 0, i32 7} ; [ DW_TAG_base_type ]
 !25 = metadata !{metadata !26}
 !26 = metadata !{i32 786468}                      ; [ DW_TAG_base_type ]
@@ -3096,10 +3096,10 @@ declare void @_GLOBAL__I_a() nounwind section ".text.startup"
 !82 = metadata !{null, metadata !20, metadata !83}
 !83 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !84} ; [ DW_TAG_pointer_type ]
 !84 = metadata !{i32 786434, null, metadata !"yuv", metadata !85, i32 15, i64 32, i64 8, i32 0, i32 0, null, metadata !86, i32 0, null, null} ; [ DW_TAG_class_type ]
-!85 = metadata !{i32 786473, metadata !"feature_maxi/feature.h", metadata !"/home/chathura/feature_IP/maxi", null} ; [ DW_TAG_file_type ]
+!85 = metadata !{i32 786473, metadata !"feature_maxi/feature.h", metadata !"f:/maxi", null} ; [ DW_TAG_file_type ]
 !86 = metadata !{metadata !87, metadata !90, metadata !91, metadata !92}
 !87 = metadata !{i32 786445, metadata !84, metadata !"u", metadata !85, i32 16, i64 8, i64 8, i64 0, i32 0, metadata !88} ; [ DW_TAG_member ]
-!88 = metadata !{i32 786454, null, metadata !"uint8_t", metadata !85, i32 48, i64 0, i64 0, i64 0, i32 0, metadata !89} ; [ DW_TAG_typedef ]
+!88 = metadata !{i32 786454, null, metadata !"uint8_t", metadata !85, i32 36, i64 0, i64 0, i64 0, i32 0, metadata !89} ; [ DW_TAG_typedef ]
 !89 = metadata !{i32 786468, null, metadata !"unsigned char", null, i32 0, i64 8, i64 8, i64 0, i32 0, i32 8} ; [ DW_TAG_base_type ]
 !90 = metadata !{i32 786445, metadata !84, metadata !"y1", metadata !85, i32 17, i64 8, i64 8, i64 8, i32 0, metadata !88} ; [ DW_TAG_member ]
 !91 = metadata !{i32 786445, metadata !84, metadata !"v", metadata !85, i32 18, i64 8, i64 8, i64 16, i32 0, metadata !88} ; [ DW_TAG_member ]

@@ -1,0 +1,13 @@
+In file included from apatb_feature.cpp:18:0:
+F:/Xilinx/Vivado_HLS/2015.4/include/ap_stream.h:70:2: warning: #warning AP_STREAM macros are deprecated. Please use hls::stream<> from "hls_stream.h" instead. [-Wcpp]
+In file included from F:/Xilinx/Vivado_HLS/2015.4/include/floating_point_v7_0_bitacc_cmodel.h:143:0,
+                 from F:/Xilinx/Vivado_HLS/2015.4/include/hls_half.h:40,
+                 from apatb_feature.cpp:20:
+F:/Xilinx/Vivado_HLS/2015.4/include/gmp.h:62:0: warning: "__GMP_LIBGMP_DLL" redefined [enabled by default]
+F:/Xilinx/Vivado_HLS/2015.4/include/floating_point_v7_0_bitacc_cmodel.h:135:0: note: this is the location of the previous definition
+obj/feature.cpp_pre.o: In function `Z7featurePjPtS0_':
+(.text+0xd473): multiple definition of `feature(unsigned int*, unsigned short*, unsigned short*)'
+obj/apatb_feature.o:F:\maxi\feature_maxi\solution1\sim\wrapc/apatb_feature.cpp:114: first defined here
+obj/apatb_feature.o:apatb_feature.cpp:(.text+0x11fb): undefined reference to `AESL_ORIG_DUT_feature(unsigned int*, unsigned short*, unsigned short*)'
+collect2: ld returned 1 exit status
+make: *** [cosim.tv.exe] Error 1

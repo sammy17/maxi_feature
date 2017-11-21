@@ -5,13 +5,14 @@
 ############################################################
 open_project feature_maxi
 set_top feature
-add_files feature_maxi/feature.cpp
 add_files feature_maxi/feature.h
+add_files feature_maxi/feature.cpp
+add_files -tb feature_maxi/test.cpp
 open_solution "solution1"
 set_part {xc7z020clg484-1}
 create_clock -period 10 -name default
 #source "./feature_maxi/solution1/directives.tcl"
-#csim_design
+csim_design
 csynth_design
-#cosim_design
+cosim_design -setup -trace_level all
 export_design -format ip_catalog

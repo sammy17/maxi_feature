@@ -19,6 +19,6 @@ struct yuv{
 	uint8_t y2;
 };
 
-void feature(AXI_STREAM& inputStream, uint16_t* bounding,uint16_t* featureh);
+void feature(uint32_t * frame_in, uint16_t* bounding,uint16_t* featureh);
 void tostruct(uint32_t val, yuv *yuv_struct);
 void yuv2rgb(yuv in, uint8_t rgb[6]) ;

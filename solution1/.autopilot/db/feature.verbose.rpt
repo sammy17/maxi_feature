@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'feature'
 ================================================================
-* Date:           Mon Nov 20 01:45:25 2017
+* Date:           Tue Nov 21 00:01:08 2017
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        feature_maxi
@@ -57,14 +57,14 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
 +-----------------+---------+-------+--------+-------+
 |DSP              |        -|      -|       -|      -|
-|Expression       |        -|      5|       0|   1864|
+|Expression       |        -|      5|       0|   1862|
 |FIFO             |        -|      -|       -|      -|
 |Instance         |        0|      -|    1276|   1672|
 |Memory           |        8|      -|       0|      0|
 |Multiplexer      |        -|      -|       -|   2388|
 |Register         |        -|      -|    3059|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        8|      5|    4335|   5924|
+|Total            |        8|      5|    4335|   5922|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
@@ -591,10 +591,10 @@
     |tmp_35_fu_2442_p2               |    or    |      0|  0|   1|           1|           1|
     |tmp_36_fu_2448_p2               |    or    |      0|  0|   1|           1|           1|
     |tmp_37_fu_2813_p2               |    or    |      0|  0|   1|           1|           1|
-    |D_fu_2229_p2                    |    xor   |      0|  0|  10|           8|           9|
-    |E_fu_2214_p2                    |    xor   |      0|  0|  10|           8|           9|
+    |D_fu_2229_p2                    |    xor   |      0|  0|   9|           8|           9|
+    |E_fu_2214_p2                    |    xor   |      0|  0|   9|           8|           9|
     +--------------------------------+----------+-------+---+----+------------+------------+
-    |Total                           |          |      5|  0|1864|        3669|        3610|
+    |Total                           |          |      5|  0|1862|        3669|        3610|
     +--------------------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
@@ -9144,11 +9144,11 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; mode=0x7fadb0c7c240; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ CRTL_BUS]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x7fadb0acd260; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ frame_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7fadb0b04a90; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ bounding]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7fadb0ae6550; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ featureh]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7fadb0c4dd00; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; mode=0x1e7c5ffcc10; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ CRTL_BUS]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x1e7c5ffcdc0; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ frame_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x1e7c5ffcf70; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bounding]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x1e7c5ffe8c0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ featureh]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x1e7c5fff7f0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------

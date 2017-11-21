@@ -1,6 +1,6 @@
-; ModuleID = '/home/chathura/feature_IP/maxi/feature_maxi/solution1/.autopilot/db/a.o.2.bc'
+; ModuleID = 'F:/maxi/feature_maxi/solution1/.autopilot/db/a.o.2.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
-target triple = "x86_64-unknown-linux-gnu"
+target triple = "x86_64-w64-mingw32"
 
 @mode3 = internal constant [10 x i8] c"s_axilite\00"
 @mode1 = internal constant [10 x i8] c"s_axilite\00"
@@ -18,7 +18,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @bundle = internal constant [1 x i8] zeroinitializer
 @p_str4 = internal unnamed_addr constant [1 x i8] zeroinitializer
 @p_str29 = internal unnamed_addr constant [1 x i8] zeroinitializer
-@p_str1812 = private unnamed_addr constant [12 x i8] c"hls_label_1\00", align 1
+@p_str1812 = private unnamed_addr constant [12 x i8] c"hls_label_2\00", align 1
 @p_str1810 = private unnamed_addr constant [9 x i8] c"CRTL_BUS\00", align 1
 @p_str1809 = private unnamed_addr constant [10 x i8] c"s_axilite\00", align 1
 @p_str1808 = private unnamed_addr constant [6 x i8] c"slave\00", align 1
@@ -2858,7 +2858,7 @@ entry:
   ret i10 %empty_107
 }
 
-declare void @_GLOBAL__I_a() nounwind section ".text.startup"
+declare void @_GLOBAL__I_a() nounwind
 
 !hls.encrypted.func = !{}
 !llvm.map.gv = !{!0}

@@ -1,12 +1,13 @@
-<project xmlns="com.autoesl.autopilot.project" top="feature" name="feature_maxi">
+<project xmlns="com.autoesl.autopilot.project" name="feature_maxi" top="feature">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
-        <SimFlow name="csim"/>
+        <SimFlow name="csim" csimMode="0" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
-        <file name="feature_maxi/feature.h" sc="0" tb="false" cflags=""/>
+        <file name="../test.cpp" sc="0" tb="1" cflags=" "/>
         <file name="feature_maxi/feature.cpp" sc="0" tb="false" cflags=""/>
+        <file name="feature_maxi/feature.h" sc="0" tb="false" cflags=""/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>

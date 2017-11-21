@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 1
+set ID 0
 set MemName feature_featureHist
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
@@ -121,7 +121,7 @@ featureh {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 2 \
+			id 1 \
 			corename feature_AXILiteS_axilite \
 			name feature_AXILiteS_s_axi \
 			ports {$port_AXILiteS} \
@@ -148,7 +148,7 @@ ap_idle { }
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 3 \
+			id 2 \
 			corename feature_CRTL_BUS_axilite \
 			name feature_CRTL_BUS_s_axi \
 			ports {$port_CRTL_BUS} \
@@ -167,7 +167,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 4 \
+    id 3 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
@@ -187,7 +187,7 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::m_axi_gen] == "::AESL_LIB_XILADAPTER::m_axi_gen"} {
 eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
-    id 5 \
+    id 4 \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
