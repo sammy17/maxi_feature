@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="feature.h" path="/home/zynq-fyp/Desktop/maxi_latest/maxi_feature/feature.h"/>
+    <originFiles name="feature.cpp" path="/home/zynq-fyp/Desktop/maxi_latest/maxi_feature/feature.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="/home/zynq-fyp/Desktop/maxi_latest/maxi_feature/test.cpp"/>
+    <originFiles name="testim.jpg" path="/home/zynq-fyp/Desktop/maxi_latest/maxi_feature/testim.jpg"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

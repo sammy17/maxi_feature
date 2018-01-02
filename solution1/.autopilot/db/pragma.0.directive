@@ -1,0 +1,78 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="INTERFACE">
+<option name="s_axilite" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+<option name="bundle" value="CRTL_BUS"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="5120"/>
+<option name="port" positionalBoolean="4" value="featureh"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="M_OFFSET"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="40"/>
+<option name="port" positionalBoolean="4" value="bounding"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="M_OFFSET"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="INTERFACE">
+<option name="m_axi" positionalBoolean="mode" value=""/>
+<option name="depth" value="230400"/>
+<option name="port" positionalBoolean="4" value="frame_in"/>
+<option name="offset" value="slave"/>
+<option name="bundle" value="M_OFFSET"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="rgb"/>
+<option name="core" value="RAM_2P_BRAM"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="boundingBoxes"/>
+<option name="complete" positionalBoolean="type" value=""/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="ARRAY_PARTITION">
+<option name="variable" positionalBoolean="4" value="featureHist"/>
+<option name="block" positionalBoolean="type" value=""/>
+<option name="factor" value="10"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="UNROLL">
+<option name="factor" value="8"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="UNROLL">
+<option name="factor" value="8"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="feature" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="index1"/>
+<option name="core" value="DSP48"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>
