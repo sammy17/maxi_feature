@@ -127,8 +127,8 @@ set MemName feature_rgb
 set CoreName ap_simcore_mem
 set PortList { 1 2 }
 set DataWd 8
-set AddrRange 76800
-set AddrWd 17
+set AddrRange 57600
+set AddrWd 16
 set impl_style block
 set TrueReset 0
 set HasInitializer 0
@@ -137,7 +137,7 @@ set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 2.71
-set ClkPeriod 10
+set ClkPeriod 5
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
@@ -219,7 +219,7 @@ set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 2.71
-set ClkPeriod 10
+set ClkPeriod 5
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
@@ -374,7 +374,7 @@ eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
-    delay_budget 8.75 \ 
+    delay_budget 4.375 \ 
     name {feature_M_OFFSET_m_axi} \
 } "
 } else {

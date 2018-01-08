@@ -3071,7 +3071,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>clk_period</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="14">10.000000</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.clk_period" spirit:order="14">4.000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>machine</spirit:name>
@@ -3083,7 +3083,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">1387618</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="17">1387641</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -3099,8 +3099,8 @@
         <xilinx:taxonomy>/VIVADO_HLS_IP</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>Feature</xilinx:displayName>
-      <xilinx:coreRevision>1712281615</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-28T10:45:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1801061900</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-01-06T13:30:11Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2015.4</xilinx:xilinxVersion>

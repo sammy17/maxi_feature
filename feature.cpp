@@ -8,7 +8,7 @@ void feature(uint8_t * frame_in, uint16_t* bounding, uint16_t* featureh) {
 #pragma HLS INTERFACE m_axi depth=230400 port=frame_in offset=slave bundle=M_OFFSET
 
 	uint16_t boundingBoxes[40];
-	uint8_t rgb[76800];
+	uint8_t rgb[IMG_SIZE*3/PARTS];
 #pragma HLS RESOURCE variable=rgb core=RAM_2P_BRAM
 #pragma HLS ARRAY_PARTITION variable=boundingBoxes complete dim=1
 
@@ -20,19 +20,20 @@ void feature(uint8_t * frame_in, uint16_t* bounding, uint16_t* featureh) {
 	int index1 = 0;
 	int iterator = 0;
 
-	for (int k = 0; k < 3; k++) {
+	for (int k = 0; k < PARTS; k++) {
+//#pragma HLS PIPELINE
 		iterator = 0;
-		memcpy(rgb, &frame_in[76800*k], sizeof(uint8_t) * 76800);
-		for (int i = 0; i < IMG_H / 3; i++) {
+		memcpy(rgb, &frame_in[(IMG_SIZE*3/PARTS)*k], sizeof(uint8_t) * IMG_SIZE*3/PARTS);
+		for (int i = 0; i < IMG_H / PARTS; i++) {
 			for (int j = 0; j < IMG_W; j++) {
 #pragma HLS UNROLL factor=8
 #pragma HLS PIPELINE
 
 				for (int h = 0; h < 10; h++) {
 #pragma HLS UNROLL factor=8
-					if ((boundingBoxes[h * 4 + 0] <= (i + k * 80))
+					if ((boundingBoxes[h * 4 + 0] <= (i + k * IMG_H/PARTS))
 							&& (boundingBoxes[h * 4 + 1] <= j)
-							&& (boundingBoxes[h * 4 + 2] >= (i + k * 80))
+							&& (boundingBoxes[h * 4 + 2] >= (i + k * IMG_H/PARTS))
 							&& (boundingBoxes[h * 4 + 3] >= j)) {
 
 						index1 = h * 512 + 64 * (rgb[iterator + 2] >> 5)

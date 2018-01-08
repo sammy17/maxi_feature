@@ -22,8 +22,8 @@ using namespace sc_dt;
 struct feature_rgb_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 8;
-  static const unsigned AddressRange = 76800;
-  static const unsigned AddressWidth = 17;
+  static const unsigned AddressRange = 57600;
+  static const unsigned AddressWidth = 16;
 
 //latency = 1
 //input_reg = 1
@@ -98,8 +98,8 @@ SC_MODULE(feature_rgb) {
 
 
 static const unsigned DataWidth = 8;
-static const unsigned AddressRange = 76800;
-static const unsigned AddressWidth = 17;
+static const unsigned AddressRange = 57600;
+static const unsigned AddressWidth = 16;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

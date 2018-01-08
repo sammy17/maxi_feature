@@ -1,6 +1,6 @@
 
 set TopModule "feature"
-set ClockPeriod "10.000000"
+set ClockPeriod "5.000000"
 set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
@@ -44,7 +44,7 @@ set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../feature.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {/home/zynq-fyp/Desktop/maxi_latest/maxi_feature/solution1/solution1.directive}
-set TBFiles {verilog {../testim.jpg ../test.cpp} bc {../testim.jpg ../test.cpp} sc {../testim.jpg ../test.cpp} vhdl {../testim.jpg ../test.cpp} c {} cas {../testim.jpg ../test.cpp}}
+set TBFiles {verilog {../test.cpp ../testim.jpg} bc {../test.cpp ../testim.jpg} sc {../test.cpp ../testim.jpg} vhdl {../test.cpp ../testim.jpg} c {} cas {../test.cpp ../testim.jpg}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

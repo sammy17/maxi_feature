@@ -9,8 +9,8 @@
 module feature_rgb_ram (addr0, ce0, q0, addr1, ce1, d1, we1, q1,  clk);
 
 parameter DWIDTH = 8;
-parameter AWIDTH = 17;
-parameter MEM_SIZE = 76800;
+parameter AWIDTH = 16;
+parameter MEM_SIZE = 57600;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -68,8 +68,8 @@ module feature_rgb(
     q1);
 
 parameter DataWidth = 32'd8;
-parameter AddressRange = 32'd76800;
-parameter AddressWidth = 32'd17;
+parameter AddressRange = 32'd57600;
+parameter AddressWidth = 32'd16;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

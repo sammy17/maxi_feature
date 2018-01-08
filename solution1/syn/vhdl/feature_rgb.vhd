@@ -14,8 +14,8 @@ entity feature_rgb_ram is
     generic(
             mem_type    : string := "block"; 
             dwidth     : integer := 8; 
-            awidth     : integer := 17; 
-            mem_size    : integer := 76800
+            awidth     : integer := 16; 
+            mem_size    : integer := 57600
     ); 
     port (
           addr0     : in std_logic_vector(awidth-1 downto 0); 
@@ -102,8 +102,8 @@ use IEEE.std_logic_1164.all;
 entity feature_rgb is
     generic (
         DataWidth : INTEGER := 8;
-        AddressRange : INTEGER := 76800;
-        AddressWidth : INTEGER := 17);
+        AddressRange : INTEGER := 57600;
+        AddressWidth : INTEGER := 16);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

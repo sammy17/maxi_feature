@@ -1,7 +1,7 @@
 set C_TypeInfoList {{ 
 "feature" : [[], { "return": [[], "void"]} , [{"ExternC" : 0}], [ {"frame_in": [[],{ "pointer": "0"}] }, {"bounding": [[],{ "pointer": "1"}] }, {"featureh": [[],{ "pointer": "1"}] }],[],""], 
-"1": [ "uint16_t", {"typedef": [[[], {"scalar": "unsigned short"}],""]}], 
-"0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}]
+"0": [ "uint8_t", {"typedef": [[[], {"scalar": "unsigned char"}],""]}], 
+"1": [ "uint16_t", {"typedef": [[[], {"scalar": "unsigned short"}],""]}]
 }}
 set moduleName feature
 set isCombinational 0
