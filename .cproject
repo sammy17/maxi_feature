@@ -27,10 +27,11 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1728929014" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1501405054" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
@@ -46,10 +47,11 @@
 								<option id="gnu.c.compiler.option.include.paths.1398292505" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.78244275" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
@@ -115,10 +117,11 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1946290580" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.904884243" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -129,10 +132,11 @@
 								<option id="gnu.c.compiler.option.include.paths.16150489" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.210489511" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>

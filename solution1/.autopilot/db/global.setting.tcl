@@ -1,11 +1,11 @@
 
 set TopModule "feature"
-set ClockPeriod "5.000000"
+set ClockPeriod "4.000000"
 set ClockList {ap_clk}
 set multiClockList {}
 set PortClockMap {}
 set CombLogicFlag 0
-set PipelineFlag 0
+set PipelineFlag 1
 set DataflowTaskPipelineFlag  1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
@@ -14,7 +14,7 @@ set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 0
+set HasDSPModule 1
 set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
@@ -43,7 +43,7 @@ set SCTraceOption "all"
 set TargetInfo "xc7z020:clg484:-1"
 set SourceFiles {sc {} c ../feature.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/zynq-fyp/Desktop/maxi_latest/maxi_feature/solution1/solution1.directive}
+set DirectiveFile {/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/solution1/solution1.directive}
 set TBFiles {verilog {../test.cpp ../testim.jpg} bc {../test.cpp ../testim.jpg} sc {../test.cpp ../testim.jpg} vhdl {../test.cpp ../testim.jpg} c {} cas {../test.cpp ../testim.jpg}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

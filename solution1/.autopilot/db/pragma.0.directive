@@ -13,7 +13,6 @@
 <option name="depth" value="5120"/>
 <option name="port" positionalBoolean="4" value="featureh"/>
 <option name="offset" value="slave"/>
-<option name="bundle" value="M_OFFSET"/>
 </pragma>
 </directive>
 <directive functionLabel="" functionName="feature" label="">
@@ -22,7 +21,6 @@
 <option name="depth" value="40"/>
 <option name="port" positionalBoolean="4" value="bounding"/>
 <option name="offset" value="slave"/>
-<option name="bundle" value="M_OFFSET"/>
 </pragma>
 </directive>
 <directive functionLabel="" functionName="feature" label="">
@@ -31,7 +29,6 @@
 <option name="depth" value="230400"/>
 <option name="port" positionalBoolean="4" value="frame_in"/>
 <option name="offset" value="slave"/>
-<option name="bundle" value="M_OFFSET"/>
 </pragma>
 </directive>
 <directive functionLabel="" functionName="feature" label="">
@@ -48,12 +45,7 @@
 </pragma>
 </directive>
 <directive functionLabel="" functionName="feature" label="">
-<pragma name="ARRAY_PARTITION">
-<option name="variable" positionalBoolean="4" value="featureHist"/>
-<option name="block" positionalBoolean="type" value=""/>
-<option name="factor" value="10"/>
-<option name="dim" value="1"/>
-</pragma>
+<pragma name="DATAFLOW"/>
 </directive>
 <directive functionLabel="" functionName="feature" label="">
 <pragma name="UNROLL">

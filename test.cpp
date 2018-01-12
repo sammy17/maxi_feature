@@ -12,15 +12,15 @@ int main(){
 
 	Mat im = imread("testim.jpg",CV_LOAD_IMAGE_COLOR);
 
-	uint16_t bounding[40]={0};//={0,0,128,128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-	bounding[0] = 0;
-	bounding[1] = 0;
-	bounding[2] = 100;
-	bounding[3] = 100;
-	uint16_t featureh[5120];
-	uint16_t featureHist[5120];
+	uint16_t bounding[4*BN]={0,0,100,100};//={0,0,128,128,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+//	bounding[0] = 0;
+//	bounding[1] = 0;
+//	bounding[2] = 100;
+//	bounding[3] = 100;
+	uint16_t featureh[512*BN];
+	uint16_t featureHist[512*BN];
 
-	for (int y=0;y<5120;y++){
+	for (int y=0;y<512*BN;y++){
 		featureh[y] = 0;
 		featureHist[y]= 0;
 	}
@@ -42,7 +42,7 @@ int main(){
 					index1 = h * 512 + 64 * (im.data[iterator + 2] >> 5)
 							+ 8 * (im.data[iterator + 1] >> 5)
 							+ (im.data[iterator + 0] >> 5);
-					printf("Index i=%d, j=%d : %d\n",i,j,index1);
+//					printf("Index i=%d, j=%d : %d\n",i,j,index1);
 					featureHist[index1] += 1;
 
 				}

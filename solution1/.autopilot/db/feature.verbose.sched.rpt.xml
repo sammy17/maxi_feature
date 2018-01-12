@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'feature'" level="0">
-<item name = "Date">Sun Jan  7 00:30:27 2018
+<item name = "Date">Sat Jan 13 00:01:02 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">maxi_feature</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">5.00, 4.38, 0.62</column>
+<column name="ap_clk">4.00, 3.50, 0.50</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1387662, 1387662, 1387663, 1387663, none</column>
+<column name="">1, 1, 351754, 351754, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,11 +35,6 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- memcpy.boundingBoxes.bounding">40, 40, 2, 1, 1, 40, yes</column>
-<column name="- Loop 2">1382484, 1382484, 345621, -, -, 4, no</column>
-<column name=" + memcpy..frame_in">57610, 57610, 12, 1, 1, 57600, yes</column>
-<column name=" + Loop 2.2">288006, 288006, 127, 120, 1, 2400, yes</column>
-<column name="- memcpy.featureh.featureHist.gep">5122, 5122, 4, 1, 1, 5120, yes</column>
 </table>
 </item>
 </section>

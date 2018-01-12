@@ -1,0 +1,197 @@
+
+
+================================================================
+== Vivado HLS Report for 'feature_Loop_memcpy_featureh_featureHi'
+================================================================
+* Date:           Sat Jan 13 00:01:02 2018
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        maxi_feature
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      3.50|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  520|  520|  520|  520|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                                   |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |             Loop Name             | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- memcpy.featureh.featureHist.gep  |  513|  513|         3|          1|          1|   512|    yes   |
+        +-----------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     16|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|     17|
+|Register         |        -|      -|      73|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|      73|     33|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |indvar_next1_i_fu_132_p2  |     +    |      0|  0|  10|          10|           1|
+    |ap_sig_bdd_176            |    and   |      0|  0|   1|           1|           1|
+    |exitcond4_i_fu_126_p2     |   icmp   |      0|  0|   4|          10|          11|
+    |ap_sig_bdd_108            |    or    |      0|  0|   1|           1|           1|
+    +--------------------------+----------+-------+---+----+------------+------------+
+    |Total                     |          |      0|  0|  16|          22|          14|
+    +--------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                              |   4|          9|    1|          9|
+    |ap_reg_ppiten_pp0_it2                  |   1|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_featureh_AWREADY  |   1|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_featureh_WREADY   |   1|          2|    1|          2|
+    |indvar1_i_reg_95                       |  10|          2|   10|         20|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  |  17|         17|   14|         35|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------+----+----+-----+-----------+
+    |                   Name                   | FF | LUT| Bits| Const Bits|
+    +------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                 |   8|   0|    8|          0|
+    |ap_done_reg                               |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_featureh_AWREADY     |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_featureh_WREADY      |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it0                     |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it1                     |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it2                     |   1|   0|    1|          0|
+    |ap_reg_ppstg_exitcond4_i_reg_148_pp0_it1  |   1|   0|    1|          0|
+    |exitcond4_i_reg_148                       |   1|   0|    1|          0|
+    |featureHist_load_reg_162                  |  16|   0|   16|          0|
+    |featureh_addr_reg_143                     |  31|   0|   32|          1|
+    |indvar1_i_reg_95                          |  10|   0|   10|          0|
+    +------------------------------------------+----+----+-----+-----------+
+    |Total                                     |  73|   0|   74|          1|
+    +------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+----------------------------------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |              Source Object             |    C Type    |
++-------------------------+-----+-----+------------+----------------------------------------+--------------+
+|ap_clk                   |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|ap_rst                   |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|ap_start                 |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|ap_done                  | out |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|ap_continue              |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|ap_idle                  | out |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|ap_ready                 | out |    1| ap_ctrl_hs | feature_Loop_memcpy.featureh.featureHi | return value |
+|m_axi_featureh_AWVALID   | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWREADY   |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWADDR    | out |   32|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWID      | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWLEN     | out |   32|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWSIZE    | out |    3|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWBURST   | out |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWLOCK    | out |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWCACHE   | out |    4|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWPROT    | out |    3|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWQOS     | out |    4|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWREGION  | out |    4|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_AWUSER    | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WVALID    | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WREADY    |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WDATA     | out |   16|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WSTRB     | out |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WLAST     | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WID       | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_WUSER     | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARVALID   | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARREADY   |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARADDR    | out |   32|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARID      | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARLEN     | out |   32|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARSIZE    | out |    3|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARBURST   | out |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARLOCK    | out |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARCACHE   | out |    4|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARPROT    | out |    3|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARQOS     | out |    4|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARREGION  | out |    4|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_ARUSER    | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RVALID    |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RREADY    | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RDATA     |  in |   16|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RLAST     |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RID       |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RUSER     |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_RRESP     |  in |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_BVALID    |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_BREADY    | out |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_BRESP     |  in |    2|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_BID       |  in |    1|    m_axi   |                featureh                |    pointer   |
+|m_axi_featureh_BUSER     |  in |    1|    m_axi   |                featureh                |    pointer   |
+|featureh1_dout           |  in |   32|   ap_fifo  |                featureh1               |    pointer   |
+|featureh1_empty_n        |  in |    1|   ap_fifo  |                featureh1               |    pointer   |
+|featureh1_read           | out |    1|   ap_fifo  |                featureh1               |    pointer   |
+|featureHist_address0     | out |    9|  ap_memory |               featureHist              |     array    |
+|featureHist_ce0          | out |    1|  ap_memory |               featureHist              |     array    |
+|featureHist_q0           |  in |   16|  ap_memory |               featureHist              |     array    |
++-------------------------+-----+-----+------------+----------------------------------------+--------------+
+

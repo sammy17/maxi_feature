@@ -1,0 +1,222 @@
+
+
+================================================================
+== Vivado HLS Report for 'feature_Loop_memcpy_boundingBoxes_boun'
+================================================================
+* Date:           Sat Jan 13 00:01:02 2018
+
+* Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
+* Project:        maxi_feature
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.00|      3.50|        0.50|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   13|   13|   13|   13|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |            Loop Name            | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- memcpy.boundingBoxes.bounding  |    5|    5|         3|          1|          1|     4|    yes   |
+        +---------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|    126|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      9|
+|Register         |        -|      -|     104|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     104|    135|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0  |
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------+----------+-------+---+----+------------+------------+
+    |        Variable Name        | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------+----------+-------+---+----+------------+------------+
+    |indvar_next_i_i_i_fu_210_p2  |     +    |      0|  0|   3|           3|           1|
+    |boundingBoxes_3_1_fu_259_p3  |  Select  |      0|  0|  16|           1|          16|
+    |boundingBoxes_3_3_fu_267_p3  |  Select  |      0|  0|  16|           1|          16|
+    |boundingBoxes_3_4_fu_273_p3  |  Select  |      0|  0|  16|           1|          16|
+    |boundingBoxes_3_6_fu_280_p3  |  Select  |      0|  0|  16|           1|          16|
+    |boundingBoxes_3_fu_245_p3    |  Select  |      0|  0|  16|           1|          16|
+    |newSel4_i_i_fu_239_p3        |  Select  |      0|  0|  16|           1|          16|
+    |newSel_i_i_fu_253_p3         |  Select  |      0|  0|  16|           1|          16|
+    |ap_sig_bdd_142               |    and   |      0|  0|   1|           1|           1|
+    |ap_sig_bdd_372               |    and   |      0|  0|   1|           1|           1|
+    |exitcond_i_i_i_fu_204_p2     |   icmp   |      0|  0|   2|           3|           4|
+    |sel_tmp2_i_i_fu_225_p2       |   icmp   |      0|  0|   1|           2|           1|
+    |sel_tmp4_i_i_fu_230_p2       |   icmp   |      0|  0|   1|           2|           1|
+    |sel_tmp_i_i_fu_220_p2        |   icmp   |      0|  0|   2|           2|           3|
+    |ap_sig_bdd_122               |    or    |      0|  0|   1|           1|           1|
+    |ap_sig_bdd_190               |    or    |      0|  0|   1|           1|           1|
+    |or_cond_i_i_fu_235_p2        |    or    |      0|  0|   1|           1|           1|
+    +-----------------------------+----------+-------+---+----+------------+------------+
+    |Total                        |          |      0|  0| 126|          24|         127|
+    +-----------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+----+-----------+-----+-----------+
+    |                  Name                 | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                              |   4|         10|    1|         10|
+    |ap_reg_ppiten_pp0_it2                  |   1|          2|    1|          2|
+    |ap_sig_ioackin_m_axi_bounding_ARREADY  |   1|          2|    1|          2|
+    |indvar_i_i_i_reg_172                   |   3|          2|    3|          6|
+    +---------------------------------------+----+-----------+-----+-----------+
+    |Total                                  |   9|         16|    6|         20|
+    +---------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------------------+----+----+-----+-----------+
+    |                     Name                    | FF | LUT| Bits| Const Bits|
+    +---------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                    |   9|   0|    9|          0|
+    |ap_done_reg                                  |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_bounding_ARREADY        |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it0                        |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it1                        |   1|   0|    1|          0|
+    |ap_reg_ppiten_pp0_it2                        |   1|   0|    1|          0|
+    |ap_reg_ppstg_exitcond_i_i_i_reg_316_pp0_it1  |   1|   0|    1|          0|
+    |boundingBoxes_0_reg_332                      |  16|   0|   16|          0|
+    |boundingBoxes_2_out_i_i_reg_136              |  16|   0|   16|          0|
+    |boundingBoxes_3_2_reg_148                    |  16|   0|   16|          0|
+    |boundingBoxes_3_5_reg_160                    |  16|   0|   16|          0|
+    |boundingBoxes_3_out_i_i_reg_124              |  16|   0|   16|          0|
+    |exitcond_i_i_i_reg_316                       |   1|   0|    1|          0|
+    |indvar_i_i_i_reg_172                         |   3|   0|    3|          0|
+    |sel_tmp2_i_i_reg_346                         |   1|   0|    1|          0|
+    |sel_tmp4_i_i_reg_352                         |   1|   0|    1|          0|
+    |sel_tmp_i_i_reg_340                          |   1|   0|    1|          0|
+    |tmp_12_reg_325                               |   2|   0|    2|          0|
+    +---------------------------------------------+----+----+-----+-----------+
+    |Total                                        | 104|   0|  104|          0|
+    +---------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------------+-----+-----+------------+----------------------------------------+--------------+
+|        RTL Ports        | Dir | Bits|  Protocol  |              Source Object             |    C Type    |
++-------------------------+-----+-----+------------+----------------------------------------+--------------+
+|ap_clk                   |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_rst                   |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_start                 |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_done                  | out |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_continue              |  in |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_idle                  | out |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_ready                 | out |    1| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_return_0              | out |   16| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_return_1              | out |   16| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_return_2              | out |   16| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|ap_return_3              | out |   16| ap_ctrl_hs | feature_Loop_memcpy.boundingBoxes.boun | return value |
+|m_axi_bounding_AWVALID   | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWREADY   |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWADDR    | out |   32|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWID      | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWLEN     | out |   32|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWSIZE    | out |    3|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWBURST   | out |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWLOCK    | out |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWCACHE   | out |    4|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWPROT    | out |    3|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWQOS     | out |    4|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWREGION  | out |    4|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_AWUSER    | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WVALID    | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WREADY    |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WDATA     | out |   16|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WSTRB     | out |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WLAST     | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WID       | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_WUSER     | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARVALID   | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARREADY   |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARADDR    | out |   32|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARID      | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARLEN     | out |   32|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARSIZE    | out |    3|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARBURST   | out |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARLOCK    | out |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARCACHE   | out |    4|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARPROT    | out |    3|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARQOS     | out |    4|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARREGION  | out |    4|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_ARUSER    | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RVALID    |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RREADY    | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RDATA     |  in |   16|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RLAST     |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RID       |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RUSER     |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_RRESP     |  in |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_BVALID    |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_BREADY    | out |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_BRESP     |  in |    2|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_BID       |  in |    1|    m_axi   |                bounding                |    pointer   |
+|m_axi_bounding_BUSER     |  in |    1|    m_axi   |                bounding                |    pointer   |
+|bounding1                |  in |   32|   ap_none  |                bounding1               |    scalar    |
+|frame_in                 |  in |   32|   ap_none  |                frame_in                |    scalar    |
+|featureh                 |  in |   32|   ap_none  |                featureh                |    scalar    |
+|frame_in_out_din         | out |   32|   ap_fifo  |              frame_in_out              |    pointer   |
+|frame_in_out_full_n      |  in |    1|   ap_fifo  |              frame_in_out              |    pointer   |
+|frame_in_out_write       | out |    1|   ap_fifo  |              frame_in_out              |    pointer   |
+|featureh_out_din         | out |   32|   ap_fifo  |              featureh_out              |    pointer   |
+|featureh_out_full_n      |  in |    1|   ap_fifo  |              featureh_out              |    pointer   |
+|featureh_out_write       | out |    1|   ap_fifo  |              featureh_out              |    pointer   |
++-------------------------+-----+-----+------------+----------------------------------------+--------------+
+
