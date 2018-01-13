@@ -306,7 +306,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="11" tracking_level="0" version="0">
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second class_id="12" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -557,7 +557,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -1670,7 +1670,7 @@
             <item_version>0</item_version>
             <item>
               <first>FF</first>
-              <second>104</second>
+              <second>103</second>
             </item>
             <item>
               <first>LUT</first>
@@ -1708,11 +1708,11 @@
             </item>
             <item>
               <first>FF</first>
-              <second>942</second>
+              <second>474</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>1165</second>
+              <second>1097</second>
             </item>
           </second>
         </item>

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'feature'
 ================================================================
-* Date:           Sat Jan 13 00:01:02 2018
+* Date:           Sat Jan 13 16:48:10 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        maxi_feature
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |   4.00|      3.50|        0.50|
+    |ap_clk  |  10.00|      8.75|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |     Interval    | Pipeline |
     | min | max |   min  |   max  |   Type   |
     +-----+-----+--------+--------+----------+
-    |    1|    1|  351754|  351754| dataflow |
+    |    1|    1|  348394|  348394| dataflow |
     +-----+-----+--------+--------+----------+
 
     + Detail: 
@@ -84,7 +84,7 @@ IsGatedGlobalClock: 0
 6 --> 
 * FSM state operations: 
 
- <State 1>: 2.71ns
+ <State 1>: 5.38ns
 ST_1: featureh_read [1/1] 1.00ns
 codeRepl:0  %featureh_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %featureh)
 
@@ -103,7 +103,7 @@ codeRepl:4  %frame_in_channel = alloca i32, align 4
 ST_1: featureHist [1/1] 2.71ns
 codeRepl:9  %featureHist = alloca [512 x i16], align 16
 
-ST_1: tmp [2/2] 1.00ns
+ST_1: tmp [2/2] 4.38ns
 codeRepl:20  %tmp = call fastcc { i16, i16, i16, i16 } @feature_Loop_memcpy.boundingBoxes.boun(i16* %gmem_offset, i32 %bounding_read, i32 %frame_in_read, i32 %featureh_read, i32* %frame_in_channel, i32* %featureh_channel)
 
 
@@ -202,11 +202,11 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; mode=0x7f98cf536d00; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ gmem_offset]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x7f98ce8fe4f0; pingpong=0; private_global=0; IO mode=m_axi:ce=0
-Port [ frame_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f98c0cd7ee0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ bounding]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f98c0b438f0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ featureh]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f98c08b9ec0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ gmem]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=4; mode=0x7f99cb7fa880; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ gmem_offset]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=4; mode=0x7f99ca900b60; pingpong=0; private_global=0; IO mode=m_axi:ce=0
+Port [ frame_in]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f99cb699cc0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ bounding]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f99bb6d5e90; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ featureh]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; mode=0x7f99bb6d65e0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -957,8 +957,8 @@ stg_37                      (ret                 ) [ 0000000]
 |----------|---------------------------------------------------|---------|---------|---------|---------|---------|
 | Operation|                  Functional Unit                  |   BRAM  |  DSP48E |  Delay  |    FF   |   LUT   |
 |----------|---------------------------------------------------|---------|---------|---------|---------|---------|
-|          |  grp_feature_Loop_memset_featureHist_proc1_fu_106 |    1    |    1    |  21.145 |   1309  |   961   |
-|   call   | grp_feature_Loop_memcpy_boundingBoxes_boun_fu_118 |    0    |    0    |  7.855  |   172   |   201   |
+|          |  grp_feature_Loop_memset_featureHist_proc1_fu_106 |    1    |    1    |  16.432 |   739   |   896   |
+|   call   | grp_feature_Loop_memcpy_boundingBoxes_boun_fu_118 |    0    |    0    |  7.855  |   169   |   201   |
 |          | grp_feature_Loop_memcpy_featureh_featureHi_fu_132 |    0    |    0    |  4.713  |    62   |    39   |
 |----------|---------------------------------------------------|---------|---------|---------|---------|---------|
 |          |              featureh_read_read_fu_88             |    0    |    0    |    0    |    0    |    0    |
@@ -970,7 +970,7 @@ stg_37                      (ret                 ) [ 0000000]
 |          |         boundingBoxes_1_loc_channel_fu_148        |    0    |    0    |    0    |    0    |    0    |
 |          |         boundingBoxes_0_loc_channel_fu_152        |    0    |    0    |    0    |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|---------|---------|---------|
-|   Total  |                                                   |    1    |    1    |  33.713 |   1543  |   1201  |
+|   Total  |                                                   |    1    |    1    |    29   |   970   |   1136  |
 |----------|---------------------------------------------------|---------|---------|---------|---------|---------|
 
 Memories:
@@ -1016,10 +1016,10 @@ Memories:
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    1   |    1   |   33   |  1543  |  1201  |
+|  Function |    1   |    1   |   29   |   970  |  1136  |
 |   Memory  |    2   |    -   |    -   |    0   |    0   |
 |Multiplexer|    -   |    -   |    4   |    -   |   96   |
 |  Register |    -   |    -   |    -   |   224  |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |    3   |    1   |   38   |  1767  |  1297  |
+|   Total   |    3   |    1   |   33   |  1194  |  1232  |
 +-----------+--------+--------+--------+--------+--------+

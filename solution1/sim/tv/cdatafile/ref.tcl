@@ -1,5 +1,6 @@
 set depth_list {
-{M_OFFSET 120360}
+{gmem 230400}
+{gmem_offset 5160}
 {frame_in 1}
 {bounding 1}
 {featureh 1}

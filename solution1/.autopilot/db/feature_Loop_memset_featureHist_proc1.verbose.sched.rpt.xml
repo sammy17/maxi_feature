@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'feature_Loop_memset_featureHist_proc1'" level="0">
-<item name = "Date">Sat Jan 13 00:01:01 2018
+<item name = "Date">Sat Jan 13 16:48:09 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">maxi_feature</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00, 3.50, 0.50</column>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">351753, 351753, 351753, 351753, none</column>
+<column name="">348393, 348393, 348393, 348393, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,9 +36,9 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memset_featureHist">511, 511, 1, -, -, 512, no</column>
-<column name="- Loop 2">351240, 351240, 2927, -, -, 120, no</column>
+<column name="- Loop 2">347880, 347880, 2899, -, -, 120, no</column>
 <column name=" + memcpy..frame_in">1921, 1921, 3, 1, 1, 1920, yes</column>
-<column name=" + Loop 2.2">989, 989, 42, 12, 1, 80, yes</column>
+<column name=" + Loop 2.2">966, 966, 19, 12, 1, 80, yes</column>
 </table>
 </item>
 </section>

@@ -322,7 +322,7 @@ entry:4  %frame_in_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %frame_in)
 </operation>
 
 <operation id="27" st_id="7" stage="1" lat="1">
-<core>FSL</core>
+<core>FIFO</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="37">
 <or_exp><and_exp></and_exp></or_exp>
@@ -352,7 +352,7 @@ entry:7  call void (...)* @_ssdm_op_SpecInterface(i32* %featureh_out, [8 x i8]* 
 </operation>
 
 <operation id="29" st_id="7" stage="1" lat="1">
-<core>FSL</core>
+<core>FIFO</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="37">
 <or_exp><and_exp></and_exp></or_exp>
@@ -598,59 +598,11 @@ burst.rd.body.i_ifconv.i.i:3  %boundingBoxes_0 = call i16 @_ssdm_op_Read.m_axi.i
 ]]></node>
 <StgValue><ssdm name="boundingBoxes_0"/></StgValue>
 </operation>
-
-<operation id="45" st_id="9" stage="1" lat="1">
-<core>Cmp</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="0">
-<or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
-</and_exp></or_exp>
-</condition>
-
-<node id="39" bw="1" op_0_bw="2" op_1_bw="2">
-<![CDATA[
-burst.rd.body.i_ifconv.i.i:5  %sel_tmp_i_i = icmp eq i2 %tmp_12, -2
-
-]]></node>
-<StgValue><ssdm name="sel_tmp_i_i"/></StgValue>
-</operation>
-
-<operation id="46" st_id="9" stage="1" lat="1">
-<core>Cmp</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="0">
-<or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
-</and_exp></or_exp>
-</condition>
-
-<node id="40" bw="1" op_0_bw="2" op_1_bw="2">
-<![CDATA[
-burst.rd.body.i_ifconv.i.i:6  %sel_tmp2_i_i = icmp eq i2 %tmp_12, 1
-
-]]></node>
-<StgValue><ssdm name="sel_tmp2_i_i"/></StgValue>
-</operation>
-
-<operation id="47" st_id="9" stage="1" lat="1">
-<core>Cmp</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="0">
-<or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
-</and_exp></or_exp>
-</condition>
-
-<node id="41" bw="1" op_0_bw="2" op_1_bw="2">
-<![CDATA[
-burst.rd.body.i_ifconv.i.i:7  %sel_tmp4_i_i = icmp eq i2 %tmp_12, 0
-
-]]></node>
-<StgValue><ssdm name="sel_tmp4_i_i"/></StgValue>
-</operation>
 </state>
 
 <state id="10" st_id="10">
 
-<operation id="48" st_id="10" stage="1" lat="1">
+<operation id="45" st_id="10" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="0">
@@ -666,7 +618,7 @@ burst.rd.body.i_ifconv.i.i:0  %burstread_rbegin_i_i_i = call i32 (...)* @_ssdm_o
 <StgValue><ssdm name="burstread_rbegin_i_i_i"/></StgValue>
 </operation>
 
-<operation id="49" st_id="10" stage="1" lat="1">
+<operation id="46" st_id="10" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="0">
@@ -682,7 +634,7 @@ burst.rd.body.i_ifconv.i.i:1  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32
 <StgValue><ssdm name=""/></StgValue>
 </operation>
 
-<operation id="50" st_id="10" stage="1" lat="1">
+<operation id="47" st_id="10" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="0">
@@ -696,6 +648,54 @@ burst.rd.body.i_ifconv.i.i:2  %empty_59 = call i32 (...)* @_ssdm_op_SpecLoopName
 
 ]]></node>
 <StgValue><ssdm name="empty_59"/></StgValue>
+</operation>
+
+<operation id="48" st_id="10" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<node id="39" bw="1" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+burst.rd.body.i_ifconv.i.i:5  %sel_tmp_i_i = icmp eq i2 %tmp_12, -2
+
+]]></node>
+<StgValue><ssdm name="sel_tmp_i_i"/></StgValue>
+</operation>
+
+<operation id="49" st_id="10" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<node id="40" bw="1" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+burst.rd.body.i_ifconv.i.i:6  %sel_tmp2_i_i = icmp eq i2 %tmp_12, 1
+
+]]></node>
+<StgValue><ssdm name="sel_tmp2_i_i"/></StgValue>
+</operation>
+
+<operation id="50" st_id="10" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="0">
+<or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
+</and_exp></or_exp>
+</condition>
+
+<node id="41" bw="1" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+burst.rd.body.i_ifconv.i.i:7  %sel_tmp4_i_i = icmp eq i2 %tmp_12, 0
+
+]]></node>
+<StgValue><ssdm name="sel_tmp4_i_i"/></StgValue>
 </operation>
 
 <operation id="51" st_id="10" stage="1" lat="1">
@@ -781,9 +781,8 @@ burst.rd.body.i_ifconv.i.i:12  %boundingBoxes_3_1 = select i1 %or_cond_i_i, i16 
 <operation id="56" st_id="10" stage="1" lat="1">
 <core>Sel</core>
 <MemPortIdVec></MemPortIdVec>
-<condition id="58">
+<condition id="0">
 <or_exp><and_exp><literal name="exitcond_i_i_i" val="0"/>
-<literal name="sel_tmp4_i_i" val="0"/>
 </and_exp></or_exp>
 </condition>
 

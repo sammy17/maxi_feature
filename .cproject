@@ -25,14 +25,14 @@
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1230959056" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.debug.option.debugging.level.1752291626" name="Debug Level" superClass="gnu.cpp.compiler.exe.debug.option.debugging.level" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1728929014" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1501405054" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -45,14 +45,14 @@
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.exe.debug.option.optimization.level.403312925" name="Optimization Level" superClass="gnu.c.compiler.exe.debug.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.debug.option.debugging.level.994346963" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1398292505" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.78244275" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -63,14 +63,14 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.590527359" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
 								<option id="gnu.c.link.option.paths.1511716408" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
 								</option>
 								<option id="gnu.c.link.option.libs.23552155" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
 								<option id="gnu.c.link.option.ldflags.1088855479" name="Linker flags" superClass="gnu.c.link.option.ldflags"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1280241313" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option id="gnu.cpp.link.option.paths.2023230121" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.32990482" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
 								<option id="gnu.cpp.link.option.flags.456209772" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>
@@ -115,14 +115,14 @@
 								<option id="gnu.cpp.compiler.exe.release.option.optimization.level.1763613351" name="Optimization Level" superClass="gnu.cpp.compiler.exe.release.option.optimization.level" value="gnu.cpp.compiler.optimization.level.most" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.exe.release.option.debugging.level.342190398" name="Debug Level" superClass="gnu.cpp.compiler.exe.release.option.debugging.level" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1946290580" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.904884243" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -130,27 +130,27 @@
 								<option defaultValue="gnu.c.optimization.level.most" id="gnu.c.compiler.exe.release.option.optimization.level.1012910760" name="Optimization Level" superClass="gnu.c.compiler.exe.release.option.optimization.level" valueType="enumerated"/>
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.428941102" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.16150489" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_final_180112"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include/etc"/>
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/home/zynq-fyp/Desktop/maxi_latest"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/home/chathura/maxi_new"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.210489511" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.2070694867" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release">
 								<option id="gnu.c.link.option.paths.83293944" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
 								</option>
 								<option id="gnu.c.link.option.libs.1081607269" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
 								<option id="gnu.c.link.option.ldflags.379103184" name="Linker flags" superClass="gnu.c.link.option.ldflags"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.154084632" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
 								<option id="gnu.cpp.link.option.paths.362494738" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
+									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/lib"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.39531417" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
 								<option id="gnu.cpp.link.option.flags.87539086" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>

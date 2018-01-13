@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="feature" xd:componentRef="feature" xd:initiationInterval="1387642" xd:clockPeriod="4.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="feature" xd:componentRef="feature" xd:initiationInterval="2" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CRTL_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="*(frame_in)" xd:originalName="frame_in" xd:direction="inout" xd:interfaceRef="m_axi_M_OFFSET" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="15:8" xd:arraySize="230399" xd:dataWidth="8" xd:bufferDirection="in"/>
-  <xd:arg xd:name="*(bounding)" xd:originalName="bounding" xd:direction="inout" xd:interfaceRef="m_axi_M_OFFSET" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="15:8" xd:arraySize="40" xd:dataWidth="8" xd:bufferDirection="in"/>
-  <xd:arg xd:name="*(featureh)" xd:originalName="featureh" xd:direction="inout" xd:interfaceRef="m_axi_M_OFFSET" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="15:8" xd:arraySize="5120" xd:dataWidth="8" xd:bufferDirection="out"/>
-  <xd:arg xd:name="frame_in" xd:originalName="frame_in" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_M_OFFSET" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
-  <xd:arg xd:name="bounding" xd:originalName="bounding" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_M_OFFSET" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
-  <xd:arg xd:name="featureh" xd:originalName="featureh" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_M_OFFSET" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
-  <xd:latencyEstimates xd:best-case="1387641" xd:worst-case="1387641" xd:average-case="1387641"/>
-  <xd:resourceEstimates xd:LUT="4825" xd:FF="3952" xd:BRAM="74" xd:DSP="0"/>
+  <xd:arg xd:name="*(frame_in)" xd:originalName="frame_in" xd:direction="inout" xd:interfaceRef="m_axi_gmem" xd:busTypeRef="aximm" xd:arraySize="230400" xd:dataWidth="8" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(bounding)" xd:originalName="bounding" xd:direction="inout" xd:interfaceRef="m_axi_gmem_offset" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="15:0" xd:arraySize="40" xd:dataWidth="16" xd:bufferDirection="in"/>
+  <xd:arg xd:name="*(featureh)" xd:originalName="featureh" xd:direction="inout" xd:interfaceRef="m_axi_gmem_offset" xd:busTypeRef="aximm" xd:dataPack="true" xd:bitMapping="15:0" xd:arraySize="5120" xd:dataWidth="16" xd:bufferDirection="out"/>
+  <xd:arg xd:name="frame_in" xd:originalName="frame_in" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem" xd:dataWidth="32" xd:offset="0x10" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="bounding" xd:originalName="bounding" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem_offset" xd:dataWidth="32" xd:offset="0x18" xd:handshakeRef="ap_none"/>
+  <xd:arg xd:name="featureh" xd:originalName="featureh" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:aximmInterfaceRef="m_axi_gmem_offset" xd:dataWidth="32" xd:offset="0x20" xd:handshakeRef="ap_none"/>
+  <xd:latencyEstimates xd:best-case="1" xd:worst-case="1" xd:average-case="1"/>
+  <xd:resourceEstimates xd:LUT="3148" xd:FF="1966" xd:BRAM="3" xd:DSP="1"/>
 </xd:acceleratorMap>

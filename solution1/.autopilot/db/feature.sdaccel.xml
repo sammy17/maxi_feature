@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'feature'" level="0">
-<item name = "Date">Sat Jan 13 00:01:02 2018
+<item name = "Date">Sat Jan 13 16:48:11 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">maxi_feature</item>
@@ -13,16 +13,16 @@
 <section name = "Performance Estimates" level="0">
 <item name = "Timing (ns)">
 <section name = "" level="1">
-<item name = "Target clock period (ns)">4.00</item>
-<item name = "Clock uncertainty (ns)">0.50</item>
-<item name = "Estimated clock period (ns)">3.50</item>
+<item name = "Target clock period (ns)">10.00</item>
+<item name = "Clock uncertainty (ns)">1.25</item>
+<item name = "Estimated clock period (ns)">8.75</item>
 </section>
 </item>
 <item name = "Latency (clock cycles)">
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">1, 1, 351754, 351754, dataflow</column>
+<column name="">1, 1, 348394, 348394, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
@@ -30,7 +30,7 @@
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
 <column name="grp_feature_Loop_memcpy_boundingBoxes_boun_fu_118">feature_Loop_memcpy_boundingBoxes_boun, 13, 13, 13, 13, none</column>
-<column name="grp_feature_Loop_memset_featureHist_proc1_fu_106">feature_Loop_memset_featureHist_proc1, 351753, 351753, 351753, 351753, none</column>
+<column name="grp_feature_Loop_memset_featureHist_proc1_fu_106">feature_Loop_memset_featureHist_proc1, 348393, 348393, 348393, 348393, none</column>
 <column name="grp_feature_Loop_memcpy_featureh_featureHi_fu_132">feature_Loop_memcpy_featureh_featureHi, 520, 520, 520, 520, none</column>
 </table>
 </item>
@@ -50,12 +50,12 @@
 <column name="DSP">-, -, -, -</column>
 <column name="Expression">-, -, 0, 1</column>
 <column name="FIFO">0, -, 30, 200</column>
-<column name="Instance">1, 1, 2395, 3005</column>
+<column name="Instance">1, 1, 1926, 2937</column>
 <column name="Memory">2, -, 0, 0</column>
 <column name="Multiplexer">-, -, -, 10</column>
 <column name="Register">-, -, 10, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">1, ~0, 2, 6</specialColumn>
+<specialColumn name="Utilization (%)">1, ~0, 1, 5</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -64,9 +64,9 @@
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="feature_AXILiteS_s_axi_U">feature_AXILiteS_s_axi, 0, 0, 144, 232</column>
 <column name="feature_CRTL_BUS_s_axi_U">feature_CRTL_BUS_s_axi, 0, 0, 36, 40</column>
-<column name="feature_Loop_memcpy_boundingBoxes_boun_U0">feature_Loop_memcpy_boundingBoxes_boun, 0, 0, 104, 135</column>
+<column name="feature_Loop_memcpy_boundingBoxes_boun_U0">feature_Loop_memcpy_boundingBoxes_boun, 0, 0, 103, 135</column>
 <column name="feature_Loop_memcpy_featureh_featureHi_U0">feature_Loop_memcpy_featureh_featureHi, 0, 0, 73, 33</column>
-<column name="feature_Loop_memset_featureHist_proc1_U0">feature_Loop_memset_featureHist_proc1, 1, 1, 942, 1165</column>
+<column name="feature_Loop_memset_featureHist_proc1_U0">feature_Loop_memset_featureHist_proc1, 1, 1, 474, 1097</column>
 <column name="feature_gmem_m_axi_U">feature_gmem_m_axi, 0, 0, 548, 700</column>
 <column name="feature_gmem_offset_m_axi_U">feature_gmem_offset_m_axi, 0, 0, 548, 700</column>
 </table>
@@ -262,10 +262,11 @@
 </section>
 
 <section name = "Critical Path" level="0">
-<item name = "Max Delay">2.71</item>
+<item name = "Max Delay">5.38</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'featureHist', maxi_feature/feature.cpp:16">alloca, 2.71, 2.71, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'featureh'">read, 1.00, 1.00, -, -, -, , read, &apos;featureh&apos;, -, -, -, -, -</column>
+<column name="'tmp'">call, 4.38, 5.38, -, -, -, -, -, -, -, -, -, feature_Loop_memcpy.boundingBoxes.boun, -</column>
 </table>
 </item>
 </section>

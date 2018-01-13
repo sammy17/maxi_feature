@@ -16,7 +16,7 @@ set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 2.71
-set ClkPeriod 4
+set ClkPeriod 10
 set RegisteredInput 0
 set memSimGenFunc ap_gen_simcore_mem
 set memImplGenFunc ::AESL_LIB_VIRTEX::xil_gen_RAM
@@ -533,7 +533,7 @@ eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
-    delay_budget 3.5 \ 
+    delay_budget 8.75 \ 
     name {feature_gmem_m_axi} \
 } "
 } else {
@@ -553,7 +553,7 @@ eval "::AESL_LIB_XILADAPTER::m_axi_gen { \
     corename {m_axi} \
     op interface \
     max_latency -1 \ 
-    delay_budget 3.5 \ 
+    delay_budget 8.75 \ 
     name {feature_gmem_offset_m_axi} \
 } "
 } else {

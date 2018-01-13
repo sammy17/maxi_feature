@@ -54,7 +54,7 @@
 						</inlineStackInfo>
 						<originalName></originalName>
 						<rtlName></rtlName>
-						<coreName>FSL</coreName>
+						<coreName>FIFO</coreName>
 					</Obj>
 					<bitwidth>32</bitwidth>
 				</Value>
@@ -190,14 +190,14 @@
 						<id>10</id>
 						<name>featureh_addr</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="11" tracking_level="0" version="0">
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second class_id="12" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -232,14 +232,14 @@
 						<id>11</id>
 						<name>p_wr_req</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -417,14 +417,14 @@
 						<id>23</id>
 						<name>tmp_4_i</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -458,14 +458,14 @@
 						<id>24</id>
 						<name>featureHist_addr</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -501,14 +501,14 @@
 						<id>25</id>
 						<name>featureHist_load</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -542,14 +542,14 @@
 						<id>26</id>
 						<name></name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -614,14 +614,14 @@
 						<id>30</id>
 						<name>p_wr_resp</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>54</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>
@@ -2252,7 +2252,7 @@
 		<item_version>0</item_version>
 		<item class_id="56" tracking_level="0" version="0">
 			<first>2</first>
-			<second>FSL</second>
+			<second>FIFO</second>
 		</item>
 		<item>
 			<first>3</first>

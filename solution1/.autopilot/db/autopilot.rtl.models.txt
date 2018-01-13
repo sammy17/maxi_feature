@@ -1,4 +1,4 @@
-feature_mul_mul_18ns_16s_34_3
+feature_mul_mul_18ns_16s_34_1
 feature_Loop_memset_featureHist_proc1_rgb_i
 FIFO_feature_frame_in_channel
 FIFO_feature_featureh_channel

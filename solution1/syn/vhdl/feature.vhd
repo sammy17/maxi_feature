@@ -31,10 +31,10 @@ generic (
     C_M_AXI_GMEM_OFFSET_ARUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM_OFFSET_RUSER_WIDTH : INTEGER := 1;
     C_M_AXI_GMEM_OFFSET_BUSER_WIDTH : INTEGER := 1;
-    C_M_AXI_GMEM_CACHE_VALUE : INTEGER := 3;
-    C_M_AXI_GMEM_OFFSET_PROT_VALUE : INTEGER := 0;
     C_M_AXI_GMEM_PROT_VALUE : INTEGER := 0;
+    C_M_AXI_GMEM_CACHE_VALUE : INTEGER := 3;
     C_M_AXI_GMEM_OFFSET_CACHE_VALUE : INTEGER := 3;
+    C_M_AXI_GMEM_OFFSET_PROT_VALUE : INTEGER := 0;
     C_M_AXI_GMEM_OFFSET_USER_VALUE : INTEGER := 0;
     C_M_AXI_GMEM_USER_VALUE : INTEGER := 0 );
 port (
@@ -171,7 +171,7 @@ end;
 architecture behav of feature is 
     attribute CORE_GENERATION_INFO : STRING;
     attribute CORE_GENERATION_INFO of behav : architecture is
-    "feature,hls_ip_2015_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=4.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=3.500000,HLS_SYN_LAT=1,HLS_SYN_TPT=351754,HLS_SYN_MEM=3,HLS_SYN_DSP=1,HLS_SYN_FF=2435,HLS_SYN_LUT=3216}";
+    "feature,hls_ip_2015_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020clg484-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.750000,HLS_SYN_LAT=1,HLS_SYN_TPT=348394,HLS_SYN_MEM=3,HLS_SYN_DSP=1,HLS_SYN_FF=1966,HLS_SYN_LUT=3148}";
     constant C_S_AXI_DATA_WIDTH : INTEGER range 63 downto 0 := 20;
     constant C_S_AXI_WSTRB_WIDTH : INTEGER range 63 downto 0 := 4;
     constant C_S_AXI_ADDR_WIDTH : INTEGER range 63 downto 0 := 20;
@@ -390,22 +390,22 @@ architecture behav of feature is
     signal feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_1 : STD_LOGIC_VECTOR (15 downto 0);
     signal feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_2 : STD_LOGIC_VECTOR (15 downto 0);
     signal feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_3 : STD_LOGIC_VECTOR (15 downto 0);
-    signal ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_2_loc_channel : STD_LOGIC;
-    signal boundingBoxes_2_loc_channel_full_n : STD_LOGIC;
-    signal ap_reg_ready_boundingBoxes_2_loc_channel_full_n : STD_LOGIC := '0';
-    signal ap_sig_ready_boundingBoxes_2_loc_channel_full_n : STD_LOGIC;
-    signal ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_1_loc_channel : STD_LOGIC;
-    signal boundingBoxes_1_loc_channel_full_n : STD_LOGIC;
-    signal ap_reg_ready_boundingBoxes_1_loc_channel_full_n : STD_LOGIC := '0';
-    signal ap_sig_ready_boundingBoxes_1_loc_channel_full_n : STD_LOGIC;
     signal ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_0_loc_channel : STD_LOGIC;
     signal boundingBoxes_0_loc_channel_full_n : STD_LOGIC;
     signal ap_reg_ready_boundingBoxes_0_loc_channel_full_n : STD_LOGIC := '0';
     signal ap_sig_ready_boundingBoxes_0_loc_channel_full_n : STD_LOGIC;
+    signal ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_2_loc_channel : STD_LOGIC;
+    signal boundingBoxes_2_loc_channel_full_n : STD_LOGIC;
+    signal ap_reg_ready_boundingBoxes_2_loc_channel_full_n : STD_LOGIC := '0';
+    signal ap_sig_ready_boundingBoxes_2_loc_channel_full_n : STD_LOGIC;
     signal ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_3_loc_channel : STD_LOGIC;
     signal boundingBoxes_3_loc_channel_full_n : STD_LOGIC;
     signal ap_reg_ready_boundingBoxes_3_loc_channel_full_n : STD_LOGIC := '0';
     signal ap_sig_ready_boundingBoxes_3_loc_channel_full_n : STD_LOGIC;
+    signal ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_1_loc_channel : STD_LOGIC;
+    signal boundingBoxes_1_loc_channel_full_n : STD_LOGIC;
+    signal ap_reg_ready_boundingBoxes_1_loc_channel_full_n : STD_LOGIC := '0';
+    signal ap_sig_ready_boundingBoxes_1_loc_channel_full_n : STD_LOGIC;
     signal feature_Loop_memset_featureHist_proc1_U0_ap_start : STD_LOGIC;
     signal feature_Loop_memset_featureHist_proc1_U0_ap_done : STD_LOGIC;
     signal feature_Loop_memset_featureHist_proc1_U0_ap_continue : STD_LOGIC;
@@ -2188,9 +2188,9 @@ begin
     feature_CRTL_BUS_s_axi_U_ap_dummy_ce <= ap_const_logic_1;
 
     -- feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue assign process. --
-    feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue_assign_proc : process(ap_sig_ready_boundingBoxes_2_loc_channel_full_n, ap_sig_ready_boundingBoxes_1_loc_channel_full_n, ap_sig_ready_boundingBoxes_0_loc_channel_full_n, ap_sig_ready_boundingBoxes_3_loc_channel_full_n)
+    feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue_assign_proc : process(ap_sig_ready_boundingBoxes_0_loc_channel_full_n, ap_sig_ready_boundingBoxes_2_loc_channel_full_n, ap_sig_ready_boundingBoxes_3_loc_channel_full_n, ap_sig_ready_boundingBoxes_1_loc_channel_full_n)
     begin
-        if (((ap_const_logic_1 = ap_sig_ready_boundingBoxes_2_loc_channel_full_n) and (ap_const_logic_1 = ap_sig_ready_boundingBoxes_1_loc_channel_full_n) and (ap_const_logic_1 = ap_sig_ready_boundingBoxes_0_loc_channel_full_n) and (ap_const_logic_1 = ap_sig_ready_boundingBoxes_3_loc_channel_full_n))) then 
+        if (((ap_const_logic_1 = ap_sig_ready_boundingBoxes_0_loc_channel_full_n) and (ap_const_logic_1 = ap_sig_ready_boundingBoxes_2_loc_channel_full_n) and (ap_const_logic_1 = ap_sig_ready_boundingBoxes_3_loc_channel_full_n) and (ap_const_logic_1 = ap_sig_ready_boundingBoxes_1_loc_channel_full_n))) then 
             feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue <= ap_const_logic_1;
         else 
             feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue <= ap_const_logic_0;

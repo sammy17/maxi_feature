@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'feature'
 ================================================================
-* Date:           Sat Jan 13 00:01:02 2018
+* Date:           Sat Jan 13 16:48:10 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        maxi_feature
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |   4.00|      3.50|        0.50|
+    |ap_clk  |  10.00|      8.75|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |     Interval    | Pipeline |
     | min | max |   min  |   max  |   Type   |
     +-----+-----+--------+--------+----------+
-    |    1|    1|  351754|  351754| dataflow |
+    |    1|    1|  348394|  348394| dataflow |
     +-----+-----+--------+--------+----------+
 
     + Detail: 
@@ -84,7 +84,7 @@ IsGatedGlobalClock: 0
 6 --> 
 * FSM state operations: 
 
- <State 1>: 2.00ns
+ <State 1>: 5.38ns
 ST_1: featureh_read [1/1] 1.00ns
 codeRepl:0  %featureh_read = call i32 @_ssdm_op_Read.s_axilite.i32(i32 %featureh)
 
@@ -103,7 +103,7 @@ codeRepl:4  %frame_in_channel = alloca i32, align 4
 ST_1: featureHist [1/1] 0.00ns
 codeRepl:9  %featureHist = alloca [512 x i16], align 16
 
-ST_1: tmp [2/2] 1.00ns
+ST_1: tmp [2/2] 4.38ns
 codeRepl:20  %tmp = call fastcc { i16, i16, i16, i16 } @feature_Loop_memcpy.boundingBoxes.boun(i16* %gmem_offset, i32 %bounding_read, i32 %frame_in_read, i32 %featureh_read, i32* %frame_in_channel, i32* %featureh_channel)
 
 

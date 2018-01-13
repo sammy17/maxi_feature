@@ -1,4 +1,4 @@
-   Build using "/home/zynq-fyp/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc/bin/g++"
+   Build using "/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/gcc/bin/g++"
    Compiling feature.cpp_pre.cpp.tb.cpp
    Compiling apatb_feature.cpp
    Compiling test.cpp_pre.cpp.tb.cpp

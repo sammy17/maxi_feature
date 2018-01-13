@@ -11,9 +11,9 @@ add_files -tb maxi_feature/testim.jpg
 add_files -tb maxi_feature/test.cpp
 open_solution "solution1"
 set_part {xc7z020clg484-1}
-create_clock -period 4 -name default
+create_clock -period 10 -name default
 #source "./maxi_feature/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design -setup -trace_level all
-export_design -evaluate verilog -format ip_catalog
+export_design -format ip_catalog

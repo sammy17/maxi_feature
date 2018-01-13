@@ -9,21 +9,21 @@ proc generate {drv_handle} {
     xdefine_include_file $drv_handle "xparameters.h" "XFeature" \
         "NUM_INSTANCES" \
         "DEVICE_ID" \
-        "C_S_AXI_AXILITES_BASEADDR" \
-        "C_S_AXI_AXILITES_HIGHADDR" \
         "C_S_AXI_CRTL_BUS_BASEADDR" \
-        "C_S_AXI_CRTL_BUS_HIGHADDR"
+        "C_S_AXI_CRTL_BUS_HIGHADDR" \
+        "C_S_AXI_AXILITES_BASEADDR" \
+        "C_S_AXI_AXILITES_HIGHADDR"
 
     xdefine_config_file $drv_handle "xfeature_g.c" "XFeature" \
         "DEVICE_ID" \
-        "C_S_AXI_AXILITES_BASEADDR" \
-        "C_S_AXI_CRTL_BUS_BASEADDR"
+        "C_S_AXI_CRTL_BUS_BASEADDR" \
+        "C_S_AXI_AXILITES_BASEADDR"
 
     xdefine_canonical_xpars $drv_handle "xparameters.h" "XFeature" \
         "DEVICE_ID" \
-        "C_S_AXI_AXILITES_BASEADDR" \
-        "C_S_AXI_AXILITES_HIGHADDR" \
         "C_S_AXI_CRTL_BUS_BASEADDR" \
-        "C_S_AXI_CRTL_BUS_HIGHADDR"
+        "C_S_AXI_CRTL_BUS_HIGHADDR" \
+        "C_S_AXI_AXILITES_BASEADDR" \
+        "C_S_AXI_AXILITES_HIGHADDR"
 }
 

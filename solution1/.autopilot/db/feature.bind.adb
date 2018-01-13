@@ -299,14 +299,14 @@
 						<id>15</id>
 						<name>featureHist</name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>16</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item class_id="11" tracking_level="0" version="0">
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second class_id="12" tracking_level="0" version="0">
 									<count>1</count>
 									<item_version>0</item_version>
@@ -550,14 +550,14 @@
 						<id>33</id>
 						<name></name>
 						<fileName>maxi_feature/feature.cpp</fileName>
-						<fileDirectory>/home/zynq-fyp/Desktop/maxi_final_180112</fileDirectory>
+						<fileDirectory>/home/chathura/Desktop/maxi_final_180113</fileDirectory>
 						<lineNumber>55</lineNumber>
 						<contextFuncName>feature</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
 							<item>
-								<first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+								<first>/home/chathura/Desktop/maxi_final_180113</first>
 								<second>
 									<count>1</count>
 									<item_version>0</item_version>

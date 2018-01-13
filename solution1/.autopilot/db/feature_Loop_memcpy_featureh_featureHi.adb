@@ -54,7 +54,7 @@
               </inlineStackInfo>
               <originalName/>
               <rtlName/>
-              <coreName>FSL</coreName>
+              <coreName>FIFO</coreName>
             </Obj>
             <bitwidth>32</bitwidth>
           </Value>
@@ -197,7 +197,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item class_id="11" tracking_level="0" version="0">
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second class_id="12" tracking_level="0" version="0">
                     <count>1</count>
                     <item_version>0</item_version>
@@ -239,7 +239,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -424,7 +424,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -465,7 +465,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -508,7 +508,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -549,7 +549,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -621,7 +621,7 @@
                 <count>1</count>
                 <item_version>0</item_version>
                 <item>
-                  <first>/home/zynq-fyp/Desktop/maxi_final_180112</first>
+                  <first>/home/chathura/Desktop/maxi_final_180113</first>
                   <second>
                     <count>1</count>
                     <item_version>0</item_version>
@@ -2744,7 +2744,7 @@
       <item_version>0</item_version>
       <item class_id="62" tracking_level="0" version="0">
         <first>2</first>
-        <second>FSL</second>
+        <second>FIFO</second>
       </item>
       <item>
         <first>3</first>

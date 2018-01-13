@@ -73,7 +73,7 @@
 <state id="1" st_id="1">
 
 <operation id="11" st_id="1" stage="1" lat="1">
-<core>FSL</core>
+<core>FIFO</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="9">
 <or_exp><and_exp></and_exp></or_exp>

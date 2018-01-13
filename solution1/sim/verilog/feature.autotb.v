@@ -16,32 +16,36 @@
 `define AUTOTB_TOP_INST AESL_inst_apatb_feature_top
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
 `define AUTOTB_TRANSACTION_NUM  1
-`define AUTOTB_CLOCK_PERIOD_DIV2 5.00
-`define LENGTH_M_OFFSET 120360
+`define AUTOTB_CLOCK_PERIOD_DIV2 2.00
+`define LENGTH_gmem 230400
+`define LENGTH_gmem_offset 5160
 `define LENGTH_frame_in 1
 `define LENGTH_bounding 1
 `define LENGTH_featureh 1
 
-`define   AESL_DEPTH_M_OFFSET 1
+`define   AESL_DEPTH_gmem 1
+`define   AESL_DEPTH_gmem_offset 1
 `define   AESL_DEPTH_frame_in 1
 `define   AESL_DEPTH_bounding 1
 `define   AESL_DEPTH_featureh 1
-`define AUTOTB_TVIN_M_OFFSET  "../tv/cdatafile/c.feature.autotvin_M_OFFSET.dat"
+`define AUTOTB_TVIN_gmem  "../tv/cdatafile/c.feature.autotvin_gmem.dat"
+`define AUTOTB_TVIN_gmem_offset  "../tv/cdatafile/c.feature.autotvin_gmem_offset.dat"
 `define AUTOTB_TVIN_frame_in  "../tv/cdatafile/c.feature.autotvin_frame_in.dat"
 `define AUTOTB_TVIN_bounding  "../tv/cdatafile/c.feature.autotvin_bounding.dat"
 `define AUTOTB_TVIN_featureh  "../tv/cdatafile/c.feature.autotvin_featureh.dat"
-`define AUTOTB_TVIN_M_OFFSET_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvin_M_OFFSET.dat"
+`define AUTOTB_TVIN_gmem_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvin_gmem.dat"
+`define AUTOTB_TVIN_gmem_offset_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvin_gmem_offset.dat"
 `define AUTOTB_TVIN_frame_in_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvin_frame_in.dat"
 `define AUTOTB_TVIN_bounding_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvin_bounding.dat"
 `define AUTOTB_TVIN_featureh_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvin_featureh.dat"
-`define AUTOTB_TVOUT_M_OFFSET  "../tv/cdatafile/c.feature.autotvout_M_OFFSET.dat"
-`define AUTOTB_TVOUT_M_OFFSET_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvout_M_OFFSET.dat"
+`define AUTOTB_TVOUT_gmem_offset  "../tv/cdatafile/c.feature.autotvout_gmem_offset.dat"
+`define AUTOTB_TVOUT_gmem_offset_out_wrapc  "../tv/rtldatafile/rtl.feature.autotvout_gmem_offset.dat"
 
 module `AUTOTB_TOP;
 
 task read_token;
     input integer fp;
-    output reg [207 : 0] token;
+    output reg [231 : 0] token;
     reg [7:0] c;
     reg intoken;
     reg done;
@@ -89,8 +93,8 @@ reg [31 : 0] AESL_mLatCnterIn_addr;
 reg [31 : 0] AESL_mLatCnterOut [0 : `AUTOTB_TRANSACTION_NUM + 1];
 reg [31 : 0] AESL_mLatCnterOut_addr ;
 reg [31 : 0] AESL_clk_counter ;
-reg [22 - 1 : 0] AESL_clk_ready[0 : `AUTOTB_TRANSACTION_NUM + 1];
-reg [22 - 1 : 0] AESL_clk_done[0 : `AUTOTB_TRANSACTION_NUM + 1];
+reg [1 - 1 : 0] AESL_clk_ready[0 : `AUTOTB_TRANSACTION_NUM + 1];
+reg [1 - 1 : 0] AESL_clk_done[0 : `AUTOTB_TRANSACTION_NUM + 1];
 
 reg reported_stuck = 0;
 reg reported_stuck_cnt = 0;
@@ -128,52 +132,97 @@ wire [1 : 0] CRTL_BUS_RRESP;
 wire  CRTL_BUS_BVALID;
 wire  CRTL_BUS_BREADY;
 wire [1 : 0] CRTL_BUS_BRESP;
-wire  M_OFFSET_AWVALID;
-wire  M_OFFSET_AWREADY;
-wire [31 : 0] M_OFFSET_AWADDR;
-wire [0 : 0] M_OFFSET_AWID;
-wire [7 : 0] M_OFFSET_AWLEN;
-wire [2 : 0] M_OFFSET_AWSIZE;
-wire [1 : 0] M_OFFSET_AWBURST;
-wire [1 : 0] M_OFFSET_AWLOCK;
-wire [3 : 0] M_OFFSET_AWCACHE;
-wire [2 : 0] M_OFFSET_AWPROT;
-wire [3 : 0] M_OFFSET_AWQOS;
-wire [3 : 0] M_OFFSET_AWREGION;
-wire [0 : 0] M_OFFSET_AWUSER;
-wire  M_OFFSET_WVALID;
-wire  M_OFFSET_WREADY;
-wire [31 : 0] M_OFFSET_WDATA;
-wire [3 : 0] M_OFFSET_WSTRB;
-wire  M_OFFSET_WLAST;
-wire [0 : 0] M_OFFSET_WID;
-wire [0 : 0] M_OFFSET_WUSER;
-wire  M_OFFSET_ARVALID;
-wire  M_OFFSET_ARREADY;
-wire [31 : 0] M_OFFSET_ARADDR;
-wire [0 : 0] M_OFFSET_ARID;
-wire [7 : 0] M_OFFSET_ARLEN;
-wire [2 : 0] M_OFFSET_ARSIZE;
-wire [1 : 0] M_OFFSET_ARBURST;
-wire [1 : 0] M_OFFSET_ARLOCK;
-wire [3 : 0] M_OFFSET_ARCACHE;
-wire [2 : 0] M_OFFSET_ARPROT;
-wire [3 : 0] M_OFFSET_ARQOS;
-wire [3 : 0] M_OFFSET_ARREGION;
-wire [0 : 0] M_OFFSET_ARUSER;
-wire  M_OFFSET_RVALID;
-wire  M_OFFSET_RREADY;
-wire [31 : 0] M_OFFSET_RDATA;
-wire  M_OFFSET_RLAST;
-wire [0 : 0] M_OFFSET_RID;
-wire [0 : 0] M_OFFSET_RUSER;
-wire [1 : 0] M_OFFSET_RRESP;
-wire  M_OFFSET_BVALID;
-wire  M_OFFSET_BREADY;
-wire [1 : 0] M_OFFSET_BRESP;
-wire [0 : 0] M_OFFSET_BID;
-wire [0 : 0] M_OFFSET_BUSER;
 wire  interrupt;
+wire  gmem_AWVALID;
+wire  gmem_AWREADY;
+wire [31 : 0] gmem_AWADDR;
+wire [0 : 0] gmem_AWID;
+wire [7 : 0] gmem_AWLEN;
+wire [2 : 0] gmem_AWSIZE;
+wire [1 : 0] gmem_AWBURST;
+wire [1 : 0] gmem_AWLOCK;
+wire [3 : 0] gmem_AWCACHE;
+wire [2 : 0] gmem_AWPROT;
+wire [3 : 0] gmem_AWQOS;
+wire [3 : 0] gmem_AWREGION;
+wire [0 : 0] gmem_AWUSER;
+wire  gmem_WVALID;
+wire  gmem_WREADY;
+wire [31 : 0] gmem_WDATA;
+wire [3 : 0] gmem_WSTRB;
+wire  gmem_WLAST;
+wire [0 : 0] gmem_WID;
+wire [0 : 0] gmem_WUSER;
+wire  gmem_ARVALID;
+wire  gmem_ARREADY;
+wire [31 : 0] gmem_ARADDR;
+wire [0 : 0] gmem_ARID;
+wire [7 : 0] gmem_ARLEN;
+wire [2 : 0] gmem_ARSIZE;
+wire [1 : 0] gmem_ARBURST;
+wire [1 : 0] gmem_ARLOCK;
+wire [3 : 0] gmem_ARCACHE;
+wire [2 : 0] gmem_ARPROT;
+wire [3 : 0] gmem_ARQOS;
+wire [3 : 0] gmem_ARREGION;
+wire [0 : 0] gmem_ARUSER;
+wire  gmem_RVALID;
+wire  gmem_RREADY;
+wire [31 : 0] gmem_RDATA;
+wire  gmem_RLAST;
+wire [0 : 0] gmem_RID;
+wire [0 : 0] gmem_RUSER;
+wire [1 : 0] gmem_RRESP;
+wire  gmem_BVALID;
+wire  gmem_BREADY;
+wire [1 : 0] gmem_BRESP;
+wire [0 : 0] gmem_BID;
+wire [0 : 0] gmem_BUSER;
+wire  gmem_offset_AWVALID;
+wire  gmem_offset_AWREADY;
+wire [31 : 0] gmem_offset_AWADDR;
+wire [0 : 0] gmem_offset_AWID;
+wire [7 : 0] gmem_offset_AWLEN;
+wire [2 : 0] gmem_offset_AWSIZE;
+wire [1 : 0] gmem_offset_AWBURST;
+wire [1 : 0] gmem_offset_AWLOCK;
+wire [3 : 0] gmem_offset_AWCACHE;
+wire [2 : 0] gmem_offset_AWPROT;
+wire [3 : 0] gmem_offset_AWQOS;
+wire [3 : 0] gmem_offset_AWREGION;
+wire [0 : 0] gmem_offset_AWUSER;
+wire  gmem_offset_WVALID;
+wire  gmem_offset_WREADY;
+wire [31 : 0] gmem_offset_WDATA;
+wire [3 : 0] gmem_offset_WSTRB;
+wire  gmem_offset_WLAST;
+wire [0 : 0] gmem_offset_WID;
+wire [0 : 0] gmem_offset_WUSER;
+wire  gmem_offset_ARVALID;
+wire  gmem_offset_ARREADY;
+wire [31 : 0] gmem_offset_ARADDR;
+wire [0 : 0] gmem_offset_ARID;
+wire [7 : 0] gmem_offset_ARLEN;
+wire [2 : 0] gmem_offset_ARSIZE;
+wire [1 : 0] gmem_offset_ARBURST;
+wire [1 : 0] gmem_offset_ARLOCK;
+wire [3 : 0] gmem_offset_ARCACHE;
+wire [2 : 0] gmem_offset_ARPROT;
+wire [3 : 0] gmem_offset_ARQOS;
+wire [3 : 0] gmem_offset_ARREGION;
+wire [0 : 0] gmem_offset_ARUSER;
+wire  gmem_offset_RVALID;
+wire  gmem_offset_RREADY;
+wire [31 : 0] gmem_offset_RDATA;
+wire  gmem_offset_RLAST;
+wire [0 : 0] gmem_offset_RID;
+wire [0 : 0] gmem_offset_RUSER;
+wire [1 : 0] gmem_offset_RRESP;
+wire  gmem_offset_BVALID;
+wire  gmem_offset_BREADY;
+wire [1 : 0] gmem_offset_BRESP;
+wire [0 : 0] gmem_offset_BID;
+wire [0 : 0] gmem_offset_BUSER;
 integer done_cnt = 0;
 integer AESL_ready_cnt = 0;
 integer ready_cnt = 0;
@@ -231,52 +280,97 @@ reg slave_done_status = 0;
 	.s_axi_CRTL_BUS_BRESP(CRTL_BUS_BRESP),
 	.ap_clk(ap_clk),
 	.ap_rst_n(ap_rst_n),
-	.m_axi_M_OFFSET_AWVALID(M_OFFSET_AWVALID),
-	.m_axi_M_OFFSET_AWREADY(M_OFFSET_AWREADY),
-	.m_axi_M_OFFSET_AWADDR(M_OFFSET_AWADDR),
-	.m_axi_M_OFFSET_AWID(M_OFFSET_AWID),
-	.m_axi_M_OFFSET_AWLEN(M_OFFSET_AWLEN),
-	.m_axi_M_OFFSET_AWSIZE(M_OFFSET_AWSIZE),
-	.m_axi_M_OFFSET_AWBURST(M_OFFSET_AWBURST),
-	.m_axi_M_OFFSET_AWLOCK(M_OFFSET_AWLOCK),
-	.m_axi_M_OFFSET_AWCACHE(M_OFFSET_AWCACHE),
-	.m_axi_M_OFFSET_AWPROT(M_OFFSET_AWPROT),
-	.m_axi_M_OFFSET_AWQOS(M_OFFSET_AWQOS),
-	.m_axi_M_OFFSET_AWREGION(M_OFFSET_AWREGION),
-	.m_axi_M_OFFSET_AWUSER(M_OFFSET_AWUSER),
-	.m_axi_M_OFFSET_WVALID(M_OFFSET_WVALID),
-	.m_axi_M_OFFSET_WREADY(M_OFFSET_WREADY),
-	.m_axi_M_OFFSET_WDATA(M_OFFSET_WDATA),
-	.m_axi_M_OFFSET_WSTRB(M_OFFSET_WSTRB),
-	.m_axi_M_OFFSET_WLAST(M_OFFSET_WLAST),
-	.m_axi_M_OFFSET_WID(M_OFFSET_WID),
-	.m_axi_M_OFFSET_WUSER(M_OFFSET_WUSER),
-	.m_axi_M_OFFSET_ARVALID(M_OFFSET_ARVALID),
-	.m_axi_M_OFFSET_ARREADY(M_OFFSET_ARREADY),
-	.m_axi_M_OFFSET_ARADDR(M_OFFSET_ARADDR),
-	.m_axi_M_OFFSET_ARID(M_OFFSET_ARID),
-	.m_axi_M_OFFSET_ARLEN(M_OFFSET_ARLEN),
-	.m_axi_M_OFFSET_ARSIZE(M_OFFSET_ARSIZE),
-	.m_axi_M_OFFSET_ARBURST(M_OFFSET_ARBURST),
-	.m_axi_M_OFFSET_ARLOCK(M_OFFSET_ARLOCK),
-	.m_axi_M_OFFSET_ARCACHE(M_OFFSET_ARCACHE),
-	.m_axi_M_OFFSET_ARPROT(M_OFFSET_ARPROT),
-	.m_axi_M_OFFSET_ARQOS(M_OFFSET_ARQOS),
-	.m_axi_M_OFFSET_ARREGION(M_OFFSET_ARREGION),
-	.m_axi_M_OFFSET_ARUSER(M_OFFSET_ARUSER),
-	.m_axi_M_OFFSET_RVALID(M_OFFSET_RVALID),
-	.m_axi_M_OFFSET_RREADY(M_OFFSET_RREADY),
-	.m_axi_M_OFFSET_RDATA(M_OFFSET_RDATA),
-	.m_axi_M_OFFSET_RLAST(M_OFFSET_RLAST),
-	.m_axi_M_OFFSET_RID(M_OFFSET_RID),
-	.m_axi_M_OFFSET_RUSER(M_OFFSET_RUSER),
-	.m_axi_M_OFFSET_RRESP(M_OFFSET_RRESP),
-	.m_axi_M_OFFSET_BVALID(M_OFFSET_BVALID),
-	.m_axi_M_OFFSET_BREADY(M_OFFSET_BREADY),
-	.m_axi_M_OFFSET_BRESP(M_OFFSET_BRESP),
-	.m_axi_M_OFFSET_BID(M_OFFSET_BID),
-	.m_axi_M_OFFSET_BUSER(M_OFFSET_BUSER),
-	.interrupt(interrupt));
+	.interrupt(interrupt),
+	.m_axi_gmem_AWVALID(gmem_AWVALID),
+	.m_axi_gmem_AWREADY(gmem_AWREADY),
+	.m_axi_gmem_AWADDR(gmem_AWADDR),
+	.m_axi_gmem_AWID(gmem_AWID),
+	.m_axi_gmem_AWLEN(gmem_AWLEN),
+	.m_axi_gmem_AWSIZE(gmem_AWSIZE),
+	.m_axi_gmem_AWBURST(gmem_AWBURST),
+	.m_axi_gmem_AWLOCK(gmem_AWLOCK),
+	.m_axi_gmem_AWCACHE(gmem_AWCACHE),
+	.m_axi_gmem_AWPROT(gmem_AWPROT),
+	.m_axi_gmem_AWQOS(gmem_AWQOS),
+	.m_axi_gmem_AWREGION(gmem_AWREGION),
+	.m_axi_gmem_AWUSER(gmem_AWUSER),
+	.m_axi_gmem_WVALID(gmem_WVALID),
+	.m_axi_gmem_WREADY(gmem_WREADY),
+	.m_axi_gmem_WDATA(gmem_WDATA),
+	.m_axi_gmem_WSTRB(gmem_WSTRB),
+	.m_axi_gmem_WLAST(gmem_WLAST),
+	.m_axi_gmem_WID(gmem_WID),
+	.m_axi_gmem_WUSER(gmem_WUSER),
+	.m_axi_gmem_ARVALID(gmem_ARVALID),
+	.m_axi_gmem_ARREADY(gmem_ARREADY),
+	.m_axi_gmem_ARADDR(gmem_ARADDR),
+	.m_axi_gmem_ARID(gmem_ARID),
+	.m_axi_gmem_ARLEN(gmem_ARLEN),
+	.m_axi_gmem_ARSIZE(gmem_ARSIZE),
+	.m_axi_gmem_ARBURST(gmem_ARBURST),
+	.m_axi_gmem_ARLOCK(gmem_ARLOCK),
+	.m_axi_gmem_ARCACHE(gmem_ARCACHE),
+	.m_axi_gmem_ARPROT(gmem_ARPROT),
+	.m_axi_gmem_ARQOS(gmem_ARQOS),
+	.m_axi_gmem_ARREGION(gmem_ARREGION),
+	.m_axi_gmem_ARUSER(gmem_ARUSER),
+	.m_axi_gmem_RVALID(gmem_RVALID),
+	.m_axi_gmem_RREADY(gmem_RREADY),
+	.m_axi_gmem_RDATA(gmem_RDATA),
+	.m_axi_gmem_RLAST(gmem_RLAST),
+	.m_axi_gmem_RID(gmem_RID),
+	.m_axi_gmem_RUSER(gmem_RUSER),
+	.m_axi_gmem_RRESP(gmem_RRESP),
+	.m_axi_gmem_BVALID(gmem_BVALID),
+	.m_axi_gmem_BREADY(gmem_BREADY),
+	.m_axi_gmem_BRESP(gmem_BRESP),
+	.m_axi_gmem_BID(gmem_BID),
+	.m_axi_gmem_BUSER(gmem_BUSER),
+	.m_axi_gmem_offset_AWVALID(gmem_offset_AWVALID),
+	.m_axi_gmem_offset_AWREADY(gmem_offset_AWREADY),
+	.m_axi_gmem_offset_AWADDR(gmem_offset_AWADDR),
+	.m_axi_gmem_offset_AWID(gmem_offset_AWID),
+	.m_axi_gmem_offset_AWLEN(gmem_offset_AWLEN),
+	.m_axi_gmem_offset_AWSIZE(gmem_offset_AWSIZE),
+	.m_axi_gmem_offset_AWBURST(gmem_offset_AWBURST),
+	.m_axi_gmem_offset_AWLOCK(gmem_offset_AWLOCK),
+	.m_axi_gmem_offset_AWCACHE(gmem_offset_AWCACHE),
+	.m_axi_gmem_offset_AWPROT(gmem_offset_AWPROT),
+	.m_axi_gmem_offset_AWQOS(gmem_offset_AWQOS),
+	.m_axi_gmem_offset_AWREGION(gmem_offset_AWREGION),
+	.m_axi_gmem_offset_AWUSER(gmem_offset_AWUSER),
+	.m_axi_gmem_offset_WVALID(gmem_offset_WVALID),
+	.m_axi_gmem_offset_WREADY(gmem_offset_WREADY),
+	.m_axi_gmem_offset_WDATA(gmem_offset_WDATA),
+	.m_axi_gmem_offset_WSTRB(gmem_offset_WSTRB),
+	.m_axi_gmem_offset_WLAST(gmem_offset_WLAST),
+	.m_axi_gmem_offset_WID(gmem_offset_WID),
+	.m_axi_gmem_offset_WUSER(gmem_offset_WUSER),
+	.m_axi_gmem_offset_ARVALID(gmem_offset_ARVALID),
+	.m_axi_gmem_offset_ARREADY(gmem_offset_ARREADY),
+	.m_axi_gmem_offset_ARADDR(gmem_offset_ARADDR),
+	.m_axi_gmem_offset_ARID(gmem_offset_ARID),
+	.m_axi_gmem_offset_ARLEN(gmem_offset_ARLEN),
+	.m_axi_gmem_offset_ARSIZE(gmem_offset_ARSIZE),
+	.m_axi_gmem_offset_ARBURST(gmem_offset_ARBURST),
+	.m_axi_gmem_offset_ARLOCK(gmem_offset_ARLOCK),
+	.m_axi_gmem_offset_ARCACHE(gmem_offset_ARCACHE),
+	.m_axi_gmem_offset_ARPROT(gmem_offset_ARPROT),
+	.m_axi_gmem_offset_ARQOS(gmem_offset_ARQOS),
+	.m_axi_gmem_offset_ARREGION(gmem_offset_ARREGION),
+	.m_axi_gmem_offset_ARUSER(gmem_offset_ARUSER),
+	.m_axi_gmem_offset_RVALID(gmem_offset_RVALID),
+	.m_axi_gmem_offset_RREADY(gmem_offset_RREADY),
+	.m_axi_gmem_offset_RDATA(gmem_offset_RDATA),
+	.m_axi_gmem_offset_RLAST(gmem_offset_RLAST),
+	.m_axi_gmem_offset_RID(gmem_offset_RID),
+	.m_axi_gmem_offset_RUSER(gmem_offset_RUSER),
+	.m_axi_gmem_offset_RRESP(gmem_offset_RRESP),
+	.m_axi_gmem_offset_BVALID(gmem_offset_BVALID),
+	.m_axi_gmem_offset_BREADY(gmem_offset_BREADY),
+	.m_axi_gmem_offset_BRESP(gmem_offset_BRESP),
+	.m_axi_gmem_offset_BID(gmem_offset_BID),
+	.m_axi_gmem_offset_BUSER(gmem_offset_BUSER));
 
 // Assignment for control signal
 assign ap_clk = AESL_clock;
@@ -344,67 +438,123 @@ end
 
 
 
-wire	AESL_axi_master_M_OFFSET_ready;
-wire	AESL_axi_master_M_OFFSET_done;
+
+wire	AESL_axi_master_gmem_ready;
+wire	AESL_axi_master_gmem_done;
 wire [32 - 1:0] frame_in;
-wire [32 - 1:0] bounding;
-wire [32 - 1:0] featureh;
-AESL_axi_master_M_OFFSET AESL_AXI_MASTER_M_OFFSET(
+AESL_axi_master_gmem AESL_AXI_MASTER_gmem(
     .clk   (AESL_clock),
     .reset (AESL_reset),
-    .TRAN_M_OFFSET_AWVALID (M_OFFSET_AWVALID),
-    .TRAN_M_OFFSET_AWREADY (M_OFFSET_AWREADY),
-    .TRAN_M_OFFSET_AWADDR (M_OFFSET_AWADDR),
-    .TRAN_M_OFFSET_AWID (M_OFFSET_AWID),
-    .TRAN_M_OFFSET_AWLEN (M_OFFSET_AWLEN),
-    .TRAN_M_OFFSET_AWSIZE (M_OFFSET_AWSIZE),
-    .TRAN_M_OFFSET_AWBURST (M_OFFSET_AWBURST),
-    .TRAN_M_OFFSET_AWLOCK (M_OFFSET_AWLOCK),
-    .TRAN_M_OFFSET_AWCACHE (M_OFFSET_AWCACHE),
-    .TRAN_M_OFFSET_AWPROT (M_OFFSET_AWPROT),
-    .TRAN_M_OFFSET_AWQOS (M_OFFSET_AWQOS),
-    .TRAN_M_OFFSET_AWREGION (M_OFFSET_AWREGION),
-    .TRAN_M_OFFSET_AWUSER (M_OFFSET_AWUSER),
-    .TRAN_M_OFFSET_WVALID (M_OFFSET_WVALID),
-    .TRAN_M_OFFSET_WREADY (M_OFFSET_WREADY),
-    .TRAN_M_OFFSET_WDATA (M_OFFSET_WDATA),
-    .TRAN_M_OFFSET_WSTRB (M_OFFSET_WSTRB),
-    .TRAN_M_OFFSET_WLAST (M_OFFSET_WLAST),
-    .TRAN_M_OFFSET_WID (M_OFFSET_WID),
-    .TRAN_M_OFFSET_WUSER (M_OFFSET_WUSER),
-    .TRAN_M_OFFSET_ARVALID (M_OFFSET_ARVALID),
-    .TRAN_M_OFFSET_ARREADY (M_OFFSET_ARREADY),
-    .TRAN_M_OFFSET_ARADDR (M_OFFSET_ARADDR),
-    .TRAN_M_OFFSET_ARID (M_OFFSET_ARID),
-    .TRAN_M_OFFSET_ARLEN (M_OFFSET_ARLEN),
-    .TRAN_M_OFFSET_ARSIZE (M_OFFSET_ARSIZE),
-    .TRAN_M_OFFSET_ARBURST (M_OFFSET_ARBURST),
-    .TRAN_M_OFFSET_ARLOCK (M_OFFSET_ARLOCK),
-    .TRAN_M_OFFSET_ARCACHE (M_OFFSET_ARCACHE),
-    .TRAN_M_OFFSET_ARPROT (M_OFFSET_ARPROT),
-    .TRAN_M_OFFSET_ARQOS (M_OFFSET_ARQOS),
-    .TRAN_M_OFFSET_ARREGION (M_OFFSET_ARREGION),
-    .TRAN_M_OFFSET_ARUSER (M_OFFSET_ARUSER),
-    .TRAN_M_OFFSET_RVALID (M_OFFSET_RVALID),
-    .TRAN_M_OFFSET_RREADY (M_OFFSET_RREADY),
-    .TRAN_M_OFFSET_RDATA (M_OFFSET_RDATA),
-    .TRAN_M_OFFSET_RLAST (M_OFFSET_RLAST),
-    .TRAN_M_OFFSET_RID (M_OFFSET_RID),
-    .TRAN_M_OFFSET_RUSER (M_OFFSET_RUSER),
-    .TRAN_M_OFFSET_RRESP (M_OFFSET_RRESP),
-    .TRAN_M_OFFSET_BVALID (M_OFFSET_BVALID),
-    .TRAN_M_OFFSET_BREADY (M_OFFSET_BREADY),
-    .TRAN_M_OFFSET_BRESP (M_OFFSET_BRESP),
-    .TRAN_M_OFFSET_BID (M_OFFSET_BID),
-    .TRAN_M_OFFSET_BUSER (M_OFFSET_BUSER),
-    .TRAN_M_OFFSET_frame_in (frame_in),
-    .TRAN_M_OFFSET_bounding (bounding),
-    .TRAN_M_OFFSET_featureh (featureh),
-    .ready (AESL_axi_master_M_OFFSET_ready),
-    .done  (AESL_axi_master_M_OFFSET_done)
+    .TRAN_gmem_AWVALID (gmem_AWVALID),
+    .TRAN_gmem_AWREADY (gmem_AWREADY),
+    .TRAN_gmem_AWADDR (gmem_AWADDR),
+    .TRAN_gmem_AWID (gmem_AWID),
+    .TRAN_gmem_AWLEN (gmem_AWLEN),
+    .TRAN_gmem_AWSIZE (gmem_AWSIZE),
+    .TRAN_gmem_AWBURST (gmem_AWBURST),
+    .TRAN_gmem_AWLOCK (gmem_AWLOCK),
+    .TRAN_gmem_AWCACHE (gmem_AWCACHE),
+    .TRAN_gmem_AWPROT (gmem_AWPROT),
+    .TRAN_gmem_AWQOS (gmem_AWQOS),
+    .TRAN_gmem_AWREGION (gmem_AWREGION),
+    .TRAN_gmem_AWUSER (gmem_AWUSER),
+    .TRAN_gmem_WVALID (gmem_WVALID),
+    .TRAN_gmem_WREADY (gmem_WREADY),
+    .TRAN_gmem_WDATA (gmem_WDATA),
+    .TRAN_gmem_WSTRB (gmem_WSTRB),
+    .TRAN_gmem_WLAST (gmem_WLAST),
+    .TRAN_gmem_WID (gmem_WID),
+    .TRAN_gmem_WUSER (gmem_WUSER),
+    .TRAN_gmem_ARVALID (gmem_ARVALID),
+    .TRAN_gmem_ARREADY (gmem_ARREADY),
+    .TRAN_gmem_ARADDR (gmem_ARADDR),
+    .TRAN_gmem_ARID (gmem_ARID),
+    .TRAN_gmem_ARLEN (gmem_ARLEN),
+    .TRAN_gmem_ARSIZE (gmem_ARSIZE),
+    .TRAN_gmem_ARBURST (gmem_ARBURST),
+    .TRAN_gmem_ARLOCK (gmem_ARLOCK),
+    .TRAN_gmem_ARCACHE (gmem_ARCACHE),
+    .TRAN_gmem_ARPROT (gmem_ARPROT),
+    .TRAN_gmem_ARQOS (gmem_ARQOS),
+    .TRAN_gmem_ARREGION (gmem_ARREGION),
+    .TRAN_gmem_ARUSER (gmem_ARUSER),
+    .TRAN_gmem_RVALID (gmem_RVALID),
+    .TRAN_gmem_RREADY (gmem_RREADY),
+    .TRAN_gmem_RDATA (gmem_RDATA),
+    .TRAN_gmem_RLAST (gmem_RLAST),
+    .TRAN_gmem_RID (gmem_RID),
+    .TRAN_gmem_RUSER (gmem_RUSER),
+    .TRAN_gmem_RRESP (gmem_RRESP),
+    .TRAN_gmem_BVALID (gmem_BVALID),
+    .TRAN_gmem_BREADY (gmem_BREADY),
+    .TRAN_gmem_BRESP (gmem_BRESP),
+    .TRAN_gmem_BID (gmem_BID),
+    .TRAN_gmem_BUSER (gmem_BUSER),
+    .TRAN_gmem_frame_in (frame_in),
+    .ready (AESL_axi_master_gmem_ready),
+    .done  (AESL_axi_master_gmem_done)
 );
-assign	AESL_axi_master_M_OFFSET_ready	=   ready;
-assign	AESL_axi_master_M_OFFSET_done	=   AESL_done_delay;
+assign	AESL_axi_master_gmem_ready	=   ready;
+assign	AESL_axi_master_gmem_done	=   AESL_done_delay;
+wire	AESL_axi_master_gmem_offset_ready;
+wire	AESL_axi_master_gmem_offset_done;
+wire [32 - 1:0] bounding;
+wire [32 - 1:0] featureh;
+AESL_axi_master_gmem_offset AESL_AXI_MASTER_gmem_offset(
+    .clk   (AESL_clock),
+    .reset (AESL_reset),
+    .TRAN_gmem_offset_AWVALID (gmem_offset_AWVALID),
+    .TRAN_gmem_offset_AWREADY (gmem_offset_AWREADY),
+    .TRAN_gmem_offset_AWADDR (gmem_offset_AWADDR),
+    .TRAN_gmem_offset_AWID (gmem_offset_AWID),
+    .TRAN_gmem_offset_AWLEN (gmem_offset_AWLEN),
+    .TRAN_gmem_offset_AWSIZE (gmem_offset_AWSIZE),
+    .TRAN_gmem_offset_AWBURST (gmem_offset_AWBURST),
+    .TRAN_gmem_offset_AWLOCK (gmem_offset_AWLOCK),
+    .TRAN_gmem_offset_AWCACHE (gmem_offset_AWCACHE),
+    .TRAN_gmem_offset_AWPROT (gmem_offset_AWPROT),
+    .TRAN_gmem_offset_AWQOS (gmem_offset_AWQOS),
+    .TRAN_gmem_offset_AWREGION (gmem_offset_AWREGION),
+    .TRAN_gmem_offset_AWUSER (gmem_offset_AWUSER),
+    .TRAN_gmem_offset_WVALID (gmem_offset_WVALID),
+    .TRAN_gmem_offset_WREADY (gmem_offset_WREADY),
+    .TRAN_gmem_offset_WDATA (gmem_offset_WDATA),
+    .TRAN_gmem_offset_WSTRB (gmem_offset_WSTRB),
+    .TRAN_gmem_offset_WLAST (gmem_offset_WLAST),
+    .TRAN_gmem_offset_WID (gmem_offset_WID),
+    .TRAN_gmem_offset_WUSER (gmem_offset_WUSER),
+    .TRAN_gmem_offset_ARVALID (gmem_offset_ARVALID),
+    .TRAN_gmem_offset_ARREADY (gmem_offset_ARREADY),
+    .TRAN_gmem_offset_ARADDR (gmem_offset_ARADDR),
+    .TRAN_gmem_offset_ARID (gmem_offset_ARID),
+    .TRAN_gmem_offset_ARLEN (gmem_offset_ARLEN),
+    .TRAN_gmem_offset_ARSIZE (gmem_offset_ARSIZE),
+    .TRAN_gmem_offset_ARBURST (gmem_offset_ARBURST),
+    .TRAN_gmem_offset_ARLOCK (gmem_offset_ARLOCK),
+    .TRAN_gmem_offset_ARCACHE (gmem_offset_ARCACHE),
+    .TRAN_gmem_offset_ARPROT (gmem_offset_ARPROT),
+    .TRAN_gmem_offset_ARQOS (gmem_offset_ARQOS),
+    .TRAN_gmem_offset_ARREGION (gmem_offset_ARREGION),
+    .TRAN_gmem_offset_ARUSER (gmem_offset_ARUSER),
+    .TRAN_gmem_offset_RVALID (gmem_offset_RVALID),
+    .TRAN_gmem_offset_RREADY (gmem_offset_RREADY),
+    .TRAN_gmem_offset_RDATA (gmem_offset_RDATA),
+    .TRAN_gmem_offset_RLAST (gmem_offset_RLAST),
+    .TRAN_gmem_offset_RID (gmem_offset_RID),
+    .TRAN_gmem_offset_RUSER (gmem_offset_RUSER),
+    .TRAN_gmem_offset_RRESP (gmem_offset_RRESP),
+    .TRAN_gmem_offset_BVALID (gmem_offset_BVALID),
+    .TRAN_gmem_offset_BREADY (gmem_offset_BREADY),
+    .TRAN_gmem_offset_BRESP (gmem_offset_BRESP),
+    .TRAN_gmem_offset_BID (gmem_offset_BID),
+    .TRAN_gmem_offset_BUSER (gmem_offset_BUSER),
+    .TRAN_gmem_offset_bounding (bounding),
+    .TRAN_gmem_offset_featureh (featureh),
+    .ready (AESL_axi_master_gmem_offset_ready),
+    .done  (AESL_axi_master_gmem_offset_done)
+);
+assign	AESL_axi_master_gmem_offset_ready	=   ready;
+assign	AESL_axi_master_gmem_offset_done	=   AESL_done_delay;
 
 AESL_axi_slave_AXILiteS AESL_AXI_SLAVE_AXILiteS(
     .clk   (AESL_clock),
@@ -530,8 +680,10 @@ initial begin
 end
 
 
-reg end_M_OFFSET;
-reg [31:0] size_M_OFFSET;
+reg end_gmem;
+reg [31:0] size_gmem;
+reg end_gmem_offset;
+reg [31:0] size_gmem_offset;
 reg end_frame_in;
 reg [31:0] size_frame_in;
 reg end_bounding;
@@ -631,14 +783,14 @@ begin
   end
 end
 
-reg dump_tvout_finish_M_OFFSET;
+reg dump_tvout_finish_gmem_offset;
 
-initial begin : dump_tvout_runtime_sign_M_OFFSET
+initial begin : dump_tvout_runtime_sign_gmem_offset
 	integer fp;
-	dump_tvout_finish_M_OFFSET = 0;
-	fp = $fopen(`AUTOTB_TVOUT_M_OFFSET_out_wrapc, "w");
+	dump_tvout_finish_gmem_offset = 0;
+	fp = $fopen(`AUTOTB_TVOUT_gmem_offset_out_wrapc, "w");
 	if (fp == 0) begin
-		$display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_M_OFFSET_out_wrapc);
+		$display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_gmem_offset_out_wrapc);
 		$display("ERROR: Simulation using HLS TB failed.");
 		$finish;
 	end
@@ -649,15 +801,15 @@ initial begin : dump_tvout_runtime_sign_M_OFFSET
 	@ (posedge AESL_clock);
 	@ (posedge AESL_clock);
 	@ (posedge AESL_clock);
-	fp = $fopen(`AUTOTB_TVOUT_M_OFFSET_out_wrapc, "a");
+	fp = $fopen(`AUTOTB_TVOUT_gmem_offset_out_wrapc, "a");
 	if (fp == 0) begin
-		$display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_M_OFFSET_out_wrapc);
+		$display("Failed to open file \"%s\"!", `AUTOTB_TVOUT_gmem_offset_out_wrapc);
 		$display("ERROR: Simulation using HLS TB failed.");
 		$finish;
 	end
 	$fdisplay(fp,"[[[/runtime]]]");
 	$fclose(fp);
-	dump_tvout_finish_M_OFFSET = 1;
+	dump_tvout_finish_gmem_offset = 1;
 end
 
 always @ (negedge AESL_clock) begin

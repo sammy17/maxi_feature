@@ -9,15 +9,15 @@
 <ProductFamily>zynq</ProductFamily>
 <Part>xc7z020clg484-1</Part>
 <TopModelName>feature_Loop_memcpy_boundingBoxes_boun</TopModelName>
-<TargetClockPeriod>4.00</TargetClockPeriod>
-<ClockUncertainty>0.50</ClockUncertainty>
+<TargetClockPeriod>10.00</TargetClockPeriod>
+<ClockUncertainty>1.25</ClockUncertainty>
 </UserAssignments>
 
 <PerformanceEstimates>
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>3.50</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.75</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -39,7 +39,7 @@
 
 <AreaEstimates>
 <Resources>
-<FF>104</FF>
+<FF>103</FF>
 <LUT>135</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>0</DSP48E>

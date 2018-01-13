@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'feature'
 ================================================================
-* Date:           Sat Jan 13 00:01:02 2018
+* Date:           Sat Jan 13 16:48:11 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        maxi_feature
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |   4.00|      3.50|        0.50|
+    |ap_clk  |  10.00|      8.75|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -29,7 +29,7 @@
     |  Latency  |     Interval    | Pipeline |
     | min | max |   min  |   max  |   Type   |
     +-----+-----+--------+--------+----------+
-    |    1|    1|  351754|  351754| dataflow |
+    |    1|    1|  348394|  348394| dataflow |
     +-----+-----+--------+--------+----------+
 
     + Detail: 
@@ -39,7 +39,7 @@
         |                      Instance                     |                 Module                 |   min  |   max  |   min  |   max  |   Type  |
         +---------------------------------------------------+----------------------------------------+--------+--------+--------+--------+---------+
         |grp_feature_Loop_memcpy_boundingBoxes_boun_fu_118  |feature_Loop_memcpy_boundingBoxes_boun  |      13|      13|      13|      13|   none  |
-        |grp_feature_Loop_memset_featureHist_proc1_fu_106   |feature_Loop_memset_featureHist_proc1   |  351753|  351753|  351753|  351753|   none  |
+        |grp_feature_Loop_memset_featureHist_proc1_fu_106   |feature_Loop_memset_featureHist_proc1   |  348393|  348393|  348393|  348393|   none  |
         |grp_feature_Loop_memcpy_featureh_featureHi_fu_132  |feature_Loop_memcpy_featureh_featureHi  |     520|     520|     520|     520|   none  |
         +---------------------------------------------------+----------------------------------------+--------+--------+--------+--------+---------+
 
@@ -58,16 +58,16 @@
 |DSP              |        -|      -|       -|      -|
 |Expression       |        -|      -|       0|      1|
 |FIFO             |        0|      -|      30|    200|
-|Instance         |        1|      1|    2395|   3005|
+|Instance         |        1|      1|    1926|   2937|
 |Memory           |        2|      -|       0|      0|
 |Multiplexer      |        -|      -|       -|     10|
 |Register         |        -|      -|      10|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        3|      1|    2435|   3216|
+|Total            |        3|      1|    1966|   3148|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |        1|   ~0  |       2|      6|
+|Utilization (%)  |        1|   ~0  |       1|      5|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
@@ -77,13 +77,13 @@
     +-------------------------------------------+----------------------------------------+---------+-------+-----+------+
     |feature_AXILiteS_s_axi_U                   |feature_AXILiteS_s_axi                  |        0|      0|  144|   232|
     |feature_CRTL_BUS_s_axi_U                   |feature_CRTL_BUS_s_axi                  |        0|      0|   36|    40|
-    |feature_Loop_memcpy_boundingBoxes_boun_U0  |feature_Loop_memcpy_boundingBoxes_boun  |        0|      0|  104|   135|
+    |feature_Loop_memcpy_boundingBoxes_boun_U0  |feature_Loop_memcpy_boundingBoxes_boun  |        0|      0|  103|   135|
     |feature_Loop_memcpy_featureh_featureHi_U0  |feature_Loop_memcpy_featureh_featureHi  |        0|      0|   73|    33|
-    |feature_Loop_memset_featureHist_proc1_U0   |feature_Loop_memset_featureHist_proc1   |        1|      1|  942|  1165|
+    |feature_Loop_memset_featureHist_proc1_U0   |feature_Loop_memset_featureHist_proc1   |        1|      1|  474|  1097|
     |feature_gmem_m_axi_U                       |feature_gmem_m_axi                      |        0|      0|  548|   700|
     |feature_gmem_offset_m_axi_U                |feature_gmem_offset_m_axi               |        0|      0|  548|   700|
     +-------------------------------------------+----------------------------------------+---------+-------+-----+------+
-    |Total                                      |                                        |        1|      1| 2395|  3005|
+    |Total                                      |                                        |        1|      1| 1926|  2937|
     +-------------------------------------------+----------------------------------------+---------+-------+-----+------+
 
     * DSP48: 

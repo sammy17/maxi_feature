@@ -30,9 +30,11 @@ using namespace sc_dt;
 // [dump_enumeration [get_enumeration_list]] ---------->
 
 
-// wrapc file define: "M_OFFSET"
-#define AUTOTB_TVIN_M_OFFSET  "../tv/cdatafile/c.feature.autotvin_M_OFFSET.dat"
-#define AUTOTB_TVOUT_M_OFFSET  "../tv/cdatafile/c.feature.autotvout_M_OFFSET.dat"
+// wrapc file define: "gmem"
+#define AUTOTB_TVIN_gmem  "../tv/cdatafile/c.feature.autotvin_gmem.dat"
+// wrapc file define: "gmem_offset"
+#define AUTOTB_TVIN_gmem_offset  "../tv/cdatafile/c.feature.autotvin_gmem_offset.dat"
+#define AUTOTB_TVOUT_gmem_offset  "../tv/cdatafile/c.feature.autotvout_gmem_offset.dat"
 // wrapc file define: "frame_in"
 #define AUTOTB_TVIN_frame_in  "../tv/cdatafile/c.feature.autotvin_frame_in.dat"
 // wrapc file define: "bounding"
@@ -42,14 +44,15 @@ using namespace sc_dt;
 
 #define INTER_TCL  "../tv/cdatafile/ref.tcl"
 
-// tvout file define: "M_OFFSET"
-#define AUTOTB_TVOUT_PC_M_OFFSET  "../tv/rtldatafile/rtl.feature.autotvout_M_OFFSET.dat"
+// tvout file define: "gmem_offset"
+#define AUTOTB_TVOUT_PC_gmem_offset  "../tv/rtldatafile/rtl.feature.autotvout_gmem_offset.dat"
 
 class INTER_TCL_FILE {
 	public:
 		INTER_TCL_FILE(const char* name) {
 			mName = name;
-			M_OFFSET_depth = 0;
+			gmem_depth = 0;
+			gmem_offset_depth = 0;
 			frame_in_depth = 0;
 			bounding_depth = 0;
 			featureh_depth = 0;
@@ -72,7 +75,8 @@ class INTER_TCL_FILE {
 
 		string get_depth_list () {
 			stringstream total_list;
-			total_list << "{M_OFFSET " << M_OFFSET_depth << "}\n";
+			total_list << "{gmem " << gmem_depth << "}\n";
+			total_list << "{gmem_offset " << gmem_offset_depth << "}\n";
 			total_list << "{frame_in " << frame_in_depth << "}\n";
 			total_list << "{bounding " << bounding_depth << "}\n";
 			total_list << "{featureh " << featureh_depth << "}\n";
@@ -83,7 +87,8 @@ class INTER_TCL_FILE {
 			(*class_num) = (*class_num) > num ? (*class_num) : num;
 		}
 	public:
-		int M_OFFSET_depth;
+		int gmem_depth;
+		int gmem_offset_depth;
 		int frame_in_depth;
 		int bounding_depth;
 		int featureh_depth;
@@ -118,19 +123,19 @@ unsigned short* featureh)
 		static AESL_FILE_HANDLER aesl_fh;
 
 
-		// output port post check: "M_OFFSET"
-		aesl_fh.read(AUTOTB_TVOUT_PC_M_OFFSET, AESL_token); // [[transaction]]
+		// output port post check: "gmem_offset"
+		aesl_fh.read(AUTOTB_TVOUT_PC_gmem_offset, AESL_token); // [[transaction]]
 		if (AESL_token != "[[transaction]]")
 		{
 			exit(1);
 		}
-		aesl_fh.read(AUTOTB_TVOUT_PC_M_OFFSET, AESL_num); // transaction number
+		aesl_fh.read(AUTOTB_TVOUT_PC_gmem_offset, AESL_num); // transaction number
 
 		if (atoi(AESL_num.c_str()) == AESL_transaction_pc)
 		{
-			aesl_fh.read(AUTOTB_TVOUT_PC_M_OFFSET, AESL_token); // data
+			aesl_fh.read(AUTOTB_TVOUT_PC_gmem_offset, AESL_token); // data
 
-			sc_bv<16> *M_OFFSET_pc_buffer = new sc_bv<16>[120360];
+			sc_bv<16> *gmem_offset_pc_buffer = new sc_bv<16>[5160];
 			int i = 0;
 
 			while (AESL_token != "[[/transaction]]")
@@ -146,7 +151,7 @@ unsigned short* featureh)
 					{
 						if (!err)
 						{
-							cerr << "@W [SIM-201] RTL produces unknown value 'X' on port 'M_OFFSET', possible cause: There are uninitialized variables in the C design." << endl;
+							cerr << "@W [SIM-201] RTL produces unknown value 'X' on port 'gmem_offset', possible cause: There are uninitialized variables in the C design." << endl;
 							err = true;
 						}
 						AESL_token.replace(x_found, 1, "0");
@@ -168,7 +173,7 @@ unsigned short* featureh)
 					{
 						if (!err)
 						{
-							cerr << "@W [SIM-201] RTL produces unknown value 'X' on port 'M_OFFSET', possible cause: There are uninitialized variables in the C design." << endl;
+							cerr << "@W [SIM-201] RTL produces unknown value 'X' on port 'gmem_offset', possible cause: There are uninitialized variables in the C design." << endl;
 							err = true;
 						}
 						AESL_token.replace(x_found, 1, "0");
@@ -182,13 +187,13 @@ unsigned short* featureh)
 				// push token into output port buffer
 				if (AESL_token != "")
 				{
-					M_OFFSET_pc_buffer[i] = AESL_token.c_str();
+					gmem_offset_pc_buffer[i] = AESL_token.c_str();
 					i++;
 				}
 
-				aesl_fh.read(AUTOTB_TVOUT_PC_M_OFFSET, AESL_token); // data or [[/transaction]]
+				aesl_fh.read(AUTOTB_TVOUT_PC_gmem_offset, AESL_token); // data or [[/transaction]]
 
-				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_M_OFFSET))
+				if (AESL_token == "[[[/runtime]]]" || aesl_fh.eof(AUTOTB_TVOUT_PC_gmem_offset))
 				{
 					exit(1);
 				}
@@ -197,49 +202,24 @@ unsigned short* featureh)
 			// ***********************************
 			if (i > 0)
 			{
-				// RTL Name: M_OFFSET
+				// RTL Name: gmem_offset
 				{
-					// bitslice(7, 0)
+					// bitslice(15, 0)
 					// {
-						// celement: frame_in(7, 0)
+						// celement: bounding(15, 0)
 						// {
-							sc_lv<8>* frame_in_lv0_0_230398_2 = new sc_lv<8>[120360];
+							sc_lv<16>* bounding_lv0_0_39_1 = new sc_lv<16>[5160];
 						// }
-						// celement: bounding(7, 0)
+						// celement: featureh(15, 0)
 						// {
-							sc_lv<16>* bounding_lv0_0_39_1 = new sc_lv<16>[120360];
-						// }
-						// celement: featureh(7, 0)
-						// {
-							sc_lv<16>* featureh_lv0_0_5119_1 = new sc_lv<16>[120360];
-						// }
-					// }
-					// bitslice(15, 8)
-					// {
-						// celement: frame_in(7, 0)
-						// {
-							sc_lv<8>* frame_in_lv0_1_230399_2 = new sc_lv<8>[120360];
-						// }
-						// repeated celement: bounding(15, 8)
-						// {
-						// }
-						// repeated celement: featureh(15, 8)
-						// {
+							sc_lv<16>* featureh_lv0_0_5119_1 = new sc_lv<16>[5160];
 						// }
 					// }
 
-					// bitslice(7, 0)
+					// bitslice(15, 0)
 					{
 						int hls_map_index = 0;
-						// celement: frame_in(7, 0)
-						{
-							// carray: (0) => (230398) @ (2)
-							for (int i_0 = 0; i_0 <= 230398; i_0 += 2)
-							{
-								hls_map_index++;
-							}
-						}
-						// celement: bounding(7, 0)
+						// celement: bounding(15, 0)
 						{
 							// carray: (0) => (39) @ (1)
 							for (int i_0 = 0; i_0 <= 39; i_0 += 1)
@@ -247,57 +227,23 @@ unsigned short* featureh)
 								hls_map_index++;
 							}
 						}
-						// celement: featureh(7, 0)
+						// celement: featureh(15, 0)
 						{
 							// carray: (0) => (5119) @ (1)
 							for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
 							{
 								if (&(featureh[0]) != NULL) // check the null address if the c port is array or others
 								{
-									featureh_lv0_0_5119_1[hls_map_index++].range(7, 0) = sc_bv<8>(M_OFFSET_pc_buffer[hls_map_index].range(7, 0));
+									featureh_lv0_0_5119_1[hls_map_index++].range(15, 0) = sc_bv<16>(gmem_offset_pc_buffer[hls_map_index].range(15, 0));
 								}
 							}
 						}
 					}
-					// bitslice(15, 8)
-					{
-						int hls_map_index = 0;
-						// celement: frame_in(7, 0)
-						{
-							// carray: (1) => (230399) @ (2)
-							for (int i_0 = 1; i_0 <= 230399; i_0 += 2)
-							{
-								hls_map_index++;
-							}
-						}
-						// repeated celement: bounding(15, 8)
-						{
-							hls_map_index += 40;
-						}
-						// repeated celement: featureh(15, 8)
-						{
-							hls_map_index += 5120;
-						}
-					}
 
-					// bitslice(7, 0)
+					// bitslice(15, 0)
 					{
 						int hls_map_index = 0;
-						// celement: frame_in(7, 0)
-						{
-							// carray: (0) => (230398) @ (2)
-							for (int i_0 = 0; i_0 <= 230398; i_0 += 2)
-							{
-								// sub                    : i_0
-								// ori_name               : frame_in[i_0]
-								// sub_1st_elem           : 0
-								// ori_name_1st_elem      : frame_in[0]
-								// output_left_conversion : frame_in[i_0]
-								// output_type_conversion : (frame_in_lv0_0_230398_2[hls_map_index++]).to_uint64()
-								hls_map_index++;
-							}
-						}
-						// celement: bounding(7, 0)
+						// celement: bounding(15, 0)
 						{
 							// carray: (0) => (39) @ (1)
 							for (int i_0 = 0; i_0 <= 39; i_0 += 1)
@@ -311,7 +257,7 @@ unsigned short* featureh)
 								hls_map_index++;
 							}
 						}
-						// celement: featureh(7, 0)
+						// celement: featureh(15, 0)
 						{
 							// carray: (0) => (5119) @ (1)
 							for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
@@ -329,37 +275,11 @@ unsigned short* featureh)
 							}
 						}
 					}
-					// bitslice(15, 8)
-					{
-						int hls_map_index = 0;
-						// celement: frame_in(7, 0)
-						{
-							// carray: (1) => (230399) @ (2)
-							for (int i_0 = 1; i_0 <= 230399; i_0 += 2)
-							{
-								// sub                    : i_0
-								// ori_name               : frame_in[i_0]
-								// sub_1st_elem           : 0
-								// ori_name_1st_elem      : frame_in[0]
-								// output_left_conversion : frame_in[i_0]
-								// output_type_conversion : (frame_in_lv0_1_230399_2[hls_map_index++]).to_uint64()
-								hls_map_index++;
-							}
-						}
-						// repeated celement: bounding(15, 8)
-						{
-							hls_map_index += 40;
-						}
-						// repeated celement: featureh(15, 8)
-						{
-							hls_map_index += 5120;
-						}
-					}
 				}
 			}
 
 			// release memory allocation
-			delete [] M_OFFSET_pc_buffer;
+			delete [] gmem_offset_pc_buffer;
 		}
 
 		AESL_transaction_pc++;
@@ -370,11 +290,15 @@ unsigned short* featureh)
 
 		static AESL_FILE_HANDLER aesl_fh;
 
-		// "M_OFFSET"
-		char* tvin_M_OFFSET = new char[50];
-		aesl_fh.touch(AUTOTB_TVIN_M_OFFSET);
-		char* tvout_M_OFFSET = new char[50];
-		aesl_fh.touch(AUTOTB_TVOUT_M_OFFSET);
+		// "gmem"
+		char* tvin_gmem = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_gmem);
+
+		// "gmem_offset"
+		char* tvin_gmem_offset = new char[50];
+		aesl_fh.touch(AUTOTB_TVIN_gmem_offset);
+		char* tvout_gmem_offset = new char[50];
+		aesl_fh.touch(AUTOTB_TVOUT_gmem_offset);
 
 		// "frame_in"
 		char* tvin_frame_in = new char[50];
@@ -392,20 +316,20 @@ unsigned short* featureh)
 		int leading_zero;
 
 		// [[transaction]]
-		sprintf(tvin_M_OFFSET, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVIN_M_OFFSET, tvin_M_OFFSET);
+		sprintf(tvin_gmem, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_gmem, tvin_gmem);
 
-		sc_bv<16>* M_OFFSET_tvin_wrapc_buffer = new sc_bv<16>[120360];
+		sc_bv<8>* gmem_tvin_wrapc_buffer = new sc_bv<8>[230400];
 
-		// RTL Name: M_OFFSET
+		// RTL Name: gmem
 		{
 			// bitslice(7, 0)
 			{
 				int hls_map_index = 0;
 				// celement: frame_in(7, 0)
 				{
-					// carray: (0) => (230398) @ (2)
-					for (int i_0 = 0; i_0 <= 230398; i_0 += 2)
+					// carray: (0) => (230399) @ (1)
+					for (int i_0 = 0; i_0 <= 230399; i_0 += 1)
 					{
 						// sub                   : i_0
 						// ori_name              : frame_in[i_0]
@@ -417,106 +341,7 @@ unsigned short* featureh)
 						{
 							sc_lv<8> frame_in_tmp_mem;
 							frame_in_tmp_mem = frame_in[i_0];
-							M_OFFSET_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = frame_in_tmp_mem.range(7, 0);
-						}
-					}
-				}
-				// celement: bounding(7, 0)
-				{
-					// carray: (0) => (39) @ (1)
-					for (int i_0 = 0; i_0 <= 39; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : bounding[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : bounding[0]
-						// regulate_c_name       : bounding
-						// input_type_conversion : bounding[i_0]
-						if (&(bounding[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> bounding_tmp_mem;
-							bounding_tmp_mem = bounding[i_0];
-							M_OFFSET_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = bounding_tmp_mem.range(7, 0);
-						}
-					}
-				}
-				// celement: featureh(7, 0)
-				{
-					// carray: (0) => (5119) @ (1)
-					for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : featureh[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : featureh[0]
-						// regulate_c_name       : featureh
-						// input_type_conversion : featureh[i_0]
-						if (&(featureh[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> featureh_tmp_mem;
-							featureh_tmp_mem = featureh[i_0];
-							M_OFFSET_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = featureh_tmp_mem.range(7, 0);
-						}
-					}
-				}
-			}
-			// bitslice(15, 8)
-			{
-				int hls_map_index = 0;
-				// celement: frame_in(7, 0)
-				{
-					// carray: (1) => (230399) @ (2)
-					for (int i_0 = 1; i_0 <= 230399; i_0 += 2)
-					{
-						// sub                   : i_0
-						// ori_name              : frame_in[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : frame_in[0]
-						// regulate_c_name       : frame_in
-						// input_type_conversion : frame_in[i_0]
-						if (&(frame_in[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<8> frame_in_tmp_mem;
-							frame_in_tmp_mem = frame_in[i_0];
-							M_OFFSET_tvin_wrapc_buffer[hls_map_index++].range(15, 8) = frame_in_tmp_mem.range(7, 0);
-						}
-					}
-				}
-				// celement: bounding(15, 8)
-				{
-					// carray: (0) => (39) @ (1)
-					for (int i_0 = 0; i_0 <= 39; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : bounding[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : bounding[0]
-						// regulate_c_name       : bounding
-						// input_type_conversion : bounding[i_0]
-						if (&(bounding[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> bounding_tmp_mem;
-							bounding_tmp_mem = bounding[i_0];
-							M_OFFSET_tvin_wrapc_buffer[hls_map_index++].range(15, 8) = bounding_tmp_mem.range(15, 8);
-						}
-					}
-				}
-				// celement: featureh(15, 8)
-				{
-					// carray: (0) => (5119) @ (1)
-					for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : featureh[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : featureh[0]
-						// regulate_c_name       : featureh
-						// input_type_conversion : featureh[i_0]
-						if (&(featureh[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> featureh_tmp_mem;
-							featureh_tmp_mem = featureh[i_0];
-							M_OFFSET_tvin_wrapc_buffer[hls_map_index++].range(15, 8) = featureh_tmp_mem.range(15, 8);
+							gmem_tvin_wrapc_buffer[hls_map_index++].range(7, 0) = frame_in_tmp_mem.range(7, 0);
 						}
 					}
 				}
@@ -524,18 +349,84 @@ unsigned short* featureh)
 		}
 
 		// dump tv to file
-		for (int i = 0; i < 120360; i++)
+		for (int i = 0; i < 230400; i++)
 		{
-			sprintf(tvin_M_OFFSET, "%s\n", (M_OFFSET_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVIN_M_OFFSET, tvin_M_OFFSET);
+			sprintf(tvin_gmem, "%s\n", (gmem_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_gmem, tvin_gmem);
 		}
 
-		tcl_file.set_num(120360, &tcl_file.M_OFFSET_depth);
-		sprintf(tvin_M_OFFSET, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVIN_M_OFFSET, tvin_M_OFFSET);
+		tcl_file.set_num(230400, &tcl_file.gmem_depth);
+		sprintf(tvin_gmem, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_gmem, tvin_gmem);
 
 		// release memory allocation
-		delete [] M_OFFSET_tvin_wrapc_buffer;
+		delete [] gmem_tvin_wrapc_buffer;
+
+		// [[transaction]]
+		sprintf(tvin_gmem_offset, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVIN_gmem_offset, tvin_gmem_offset);
+
+		sc_bv<16>* gmem_offset_tvin_wrapc_buffer = new sc_bv<16>[5160];
+
+		// RTL Name: gmem_offset
+		{
+			// bitslice(15, 0)
+			{
+				int hls_map_index = 0;
+				// celement: bounding(15, 0)
+				{
+					// carray: (0) => (39) @ (1)
+					for (int i_0 = 0; i_0 <= 39; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : bounding[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : bounding[0]
+						// regulate_c_name       : bounding
+						// input_type_conversion : bounding[i_0]
+						if (&(bounding[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<16> bounding_tmp_mem;
+							bounding_tmp_mem = bounding[i_0];
+							gmem_offset_tvin_wrapc_buffer[hls_map_index++].range(15, 0) = bounding_tmp_mem.range(15, 0);
+						}
+					}
+				}
+				// celement: featureh(15, 0)
+				{
+					// carray: (0) => (5119) @ (1)
+					for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
+					{
+						// sub                   : i_0
+						// ori_name              : featureh[i_0]
+						// sub_1st_elem          : 0
+						// ori_name_1st_elem     : featureh[0]
+						// regulate_c_name       : featureh
+						// input_type_conversion : featureh[i_0]
+						if (&(featureh[0]) != NULL) // check the null address if the c port is array or others
+						{
+							sc_lv<16> featureh_tmp_mem;
+							featureh_tmp_mem = featureh[i_0];
+							gmem_offset_tvin_wrapc_buffer[hls_map_index++].range(15, 0) = featureh_tmp_mem.range(15, 0);
+						}
+					}
+				}
+			}
+		}
+
+		// dump tv to file
+		for (int i = 0; i < 5160; i++)
+		{
+			sprintf(tvin_gmem_offset, "%s\n", (gmem_offset_tvin_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVIN_gmem_offset, tvin_gmem_offset);
+		}
+
+		tcl_file.set_num(5160, &tcl_file.gmem_offset_depth);
+		sprintf(tvin_gmem_offset, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVIN_gmem_offset, tvin_gmem_offset);
+
+		// release memory allocation
+		delete [] gmem_offset_tvin_wrapc_buffer;
 
 		// [[transaction]]
 		sprintf(tvin_frame_in, "[[transaction]] %d\n", AESL_transaction);
@@ -606,36 +497,17 @@ unsigned short* featureh)
 
 
 		// [[transaction]]
-		sprintf(tvout_M_OFFSET, "[[transaction]] %d\n", AESL_transaction);
-		aesl_fh.write(AUTOTB_TVOUT_M_OFFSET, tvout_M_OFFSET);
+		sprintf(tvout_gmem_offset, "[[transaction]] %d\n", AESL_transaction);
+		aesl_fh.write(AUTOTB_TVOUT_gmem_offset, tvout_gmem_offset);
 
-		sc_bv<16>* M_OFFSET_tvout_wrapc_buffer = new sc_bv<16>[120360];
+		sc_bv<16>* gmem_offset_tvout_wrapc_buffer = new sc_bv<16>[5160];
 
-		// RTL Name: M_OFFSET
+		// RTL Name: gmem_offset
 		{
-			// bitslice(7, 0)
+			// bitslice(15, 0)
 			{
 				int hls_map_index = 0;
-				// celement: frame_in(7, 0)
-				{
-					// carray: (0) => (230398) @ (2)
-					for (int i_0 = 0; i_0 <= 230398; i_0 += 2)
-					{
-						// sub                   : i_0
-						// ori_name              : frame_in[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : frame_in[0]
-						// regulate_c_name       : frame_in
-						// input_type_conversion : frame_in[i_0]
-						if (&(frame_in[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<8> frame_in_tmp_mem;
-							frame_in_tmp_mem = frame_in[i_0];
-							M_OFFSET_tvout_wrapc_buffer[hls_map_index++].range(7, 0) = frame_in_tmp_mem.range(7, 0);
-						}
-					}
-				}
-				// celement: bounding(7, 0)
+				// celement: bounding(15, 0)
 				{
 					// carray: (0) => (39) @ (1)
 					for (int i_0 = 0; i_0 <= 39; i_0 += 1)
@@ -650,11 +522,11 @@ unsigned short* featureh)
 						{
 							sc_lv<16> bounding_tmp_mem;
 							bounding_tmp_mem = bounding[i_0];
-							M_OFFSET_tvout_wrapc_buffer[hls_map_index++].range(7, 0) = bounding_tmp_mem.range(7, 0);
+							gmem_offset_tvout_wrapc_buffer[hls_map_index++].range(15, 0) = bounding_tmp_mem.range(15, 0);
 						}
 					}
 				}
-				// celement: featureh(7, 0)
+				// celement: featureh(15, 0)
 				{
 					// carray: (0) => (5119) @ (1)
 					for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
@@ -669,68 +541,7 @@ unsigned short* featureh)
 						{
 							sc_lv<16> featureh_tmp_mem;
 							featureh_tmp_mem = featureh[i_0];
-							M_OFFSET_tvout_wrapc_buffer[hls_map_index++].range(7, 0) = featureh_tmp_mem.range(7, 0);
-						}
-					}
-				}
-			}
-			// bitslice(15, 8)
-			{
-				int hls_map_index = 0;
-				// celement: frame_in(7, 0)
-				{
-					// carray: (1) => (230399) @ (2)
-					for (int i_0 = 1; i_0 <= 230399; i_0 += 2)
-					{
-						// sub                   : i_0
-						// ori_name              : frame_in[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : frame_in[0]
-						// regulate_c_name       : frame_in
-						// input_type_conversion : frame_in[i_0]
-						if (&(frame_in[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<8> frame_in_tmp_mem;
-							frame_in_tmp_mem = frame_in[i_0];
-							M_OFFSET_tvout_wrapc_buffer[hls_map_index++].range(15, 8) = frame_in_tmp_mem.range(7, 0);
-						}
-					}
-				}
-				// celement: bounding(15, 8)
-				{
-					// carray: (0) => (39) @ (1)
-					for (int i_0 = 0; i_0 <= 39; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : bounding[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : bounding[0]
-						// regulate_c_name       : bounding
-						// input_type_conversion : bounding[i_0]
-						if (&(bounding[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> bounding_tmp_mem;
-							bounding_tmp_mem = bounding[i_0];
-							M_OFFSET_tvout_wrapc_buffer[hls_map_index++].range(15, 8) = bounding_tmp_mem.range(15, 8);
-						}
-					}
-				}
-				// celement: featureh(15, 8)
-				{
-					// carray: (0) => (5119) @ (1)
-					for (int i_0 = 0; i_0 <= 5119; i_0 += 1)
-					{
-						// sub                   : i_0
-						// ori_name              : featureh[i_0]
-						// sub_1st_elem          : 0
-						// ori_name_1st_elem     : featureh[0]
-						// regulate_c_name       : featureh
-						// input_type_conversion : featureh[i_0]
-						if (&(featureh[0]) != NULL) // check the null address if the c port is array or others
-						{
-							sc_lv<16> featureh_tmp_mem;
-							featureh_tmp_mem = featureh[i_0];
-							M_OFFSET_tvout_wrapc_buffer[hls_map_index++].range(15, 8) = featureh_tmp_mem.range(15, 8);
+							gmem_offset_tvout_wrapc_buffer[hls_map_index++].range(15, 0) = featureh_tmp_mem.range(15, 0);
 						}
 					}
 				}
@@ -738,22 +549,24 @@ unsigned short* featureh)
 		}
 
 		// dump tv to file
-		for (int i = 0; i < 120360; i++)
+		for (int i = 0; i < 5160; i++)
 		{
-			sprintf(tvout_M_OFFSET, "%s\n", (M_OFFSET_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
-			aesl_fh.write(AUTOTB_TVOUT_M_OFFSET, tvout_M_OFFSET);
+			sprintf(tvout_gmem_offset, "%s\n", (gmem_offset_tvout_wrapc_buffer[i]).to_string(SC_HEX).c_str());
+			aesl_fh.write(AUTOTB_TVOUT_gmem_offset, tvout_gmem_offset);
 		}
 
-		tcl_file.set_num(120360, &tcl_file.M_OFFSET_depth);
-		sprintf(tvout_M_OFFSET, "[[/transaction]] \n");
-		aesl_fh.write(AUTOTB_TVOUT_M_OFFSET, tvout_M_OFFSET);
+		tcl_file.set_num(5160, &tcl_file.gmem_offset_depth);
+		sprintf(tvout_gmem_offset, "[[/transaction]] \n");
+		aesl_fh.write(AUTOTB_TVOUT_gmem_offset, tvout_gmem_offset);
 
 		// release memory allocation
-		delete [] M_OFFSET_tvout_wrapc_buffer;
+		delete [] gmem_offset_tvout_wrapc_buffer;
 
-		// release memory allocation: "M_OFFSET"
-		delete [] tvin_M_OFFSET;
-		delete [] tvout_M_OFFSET;
+		// release memory allocation: "gmem"
+		delete [] tvin_gmem;
+		// release memory allocation: "gmem_offset"
+		delete [] tvin_gmem_offset;
+		delete [] tvout_gmem_offset;
 		// release memory allocation: "frame_in"
 		delete [] tvin_frame_in;
 		// release memory allocation: "bounding"

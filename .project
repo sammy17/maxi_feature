@@ -29,52 +29,52 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/.apc/.src</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/.apc/.tb</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/solution1/.tcls</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/feature.cpp</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/feature.cpp</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/feature.cpp</location>
 		</link>
 		<link>
 			<name>source/feature.h</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/feature.h</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/feature.h</location>
 		</link>
 		<link>
 			<name>testbench/test.cpp</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/test.cpp</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/test.cpp</location>
 		</link>
 		<link>
 			<name>testbench/testim.jpg</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/testim.jpg</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/testim.jpg</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/solution1/solution1.directive</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/solution1/directives.tcl</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/solution1/script.tcl</location>
+			<location>/home/chathura/Desktop/maxi_final_180113/maxi_feature/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'feature_Loop_memcpy_featureh_featureHi'" level="0">
-<item name = "Date">Sat Jan 13 00:01:02 2018
+<item name = "Date">Sat Jan 13 16:48:11 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">maxi_feature</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">4.00, 3.50, 0.50</column>
+<column name="ap_clk">10.00, 8.75, 1.25</column>
 </table>
 </item>
 </section>

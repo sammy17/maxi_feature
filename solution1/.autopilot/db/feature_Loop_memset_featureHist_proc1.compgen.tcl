@@ -1,10 +1,10 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 7
-set name feature_mul_mul_18ns_16s_34_3
+set name feature_mul_mul_18ns_16s_34_1
 set corename simcore_mul
 set op mul
-set stage_num 3
+set stage_num 1
 set max_latency -1
 set registered_input 1
 set in0_width 18
@@ -89,7 +89,7 @@ set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 2.71
-set ClkPeriod 4
+set ClkPeriod 10
 set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {

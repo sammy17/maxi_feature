@@ -762,10 +762,10 @@ feature::feature(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_feature_CRTL_BUS_s_axi_U_ap_dummy_ce);
 
     SC_METHOD(thread_feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue);
-    sensitive << ( ap_sig_ready_boundingBoxes_2_loc_channel_full_n );
-    sensitive << ( ap_sig_ready_boundingBoxes_1_loc_channel_full_n );
     sensitive << ( ap_sig_ready_boundingBoxes_0_loc_channel_full_n );
+    sensitive << ( ap_sig_ready_boundingBoxes_2_loc_channel_full_n );
     sensitive << ( ap_sig_ready_boundingBoxes_3_loc_channel_full_n );
+    sensitive << ( ap_sig_ready_boundingBoxes_1_loc_channel_full_n );
 
     SC_METHOD(thread_feature_Loop_memcpy_boundingBoxes_boun_U0_ap_start);
     sensitive << ( ap_sig_start_in_feature_Loop_memcpy_boundingBoxes_boun_U0_ap_start );
@@ -1137,10 +1137,10 @@ feature::feature(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_THREAD(thread_hdltv_gen);
     sensitive << ( ap_clk.pos() );
 
-    ap_reg_ready_boundingBoxes_2_loc_channel_full_n = SC_LOGIC_0;
-    ap_reg_ready_boundingBoxes_1_loc_channel_full_n = SC_LOGIC_0;
     ap_reg_ready_boundingBoxes_0_loc_channel_full_n = SC_LOGIC_0;
+    ap_reg_ready_boundingBoxes_2_loc_channel_full_n = SC_LOGIC_0;
     ap_reg_ready_boundingBoxes_3_loc_channel_full_n = SC_LOGIC_0;
+    ap_reg_ready_boundingBoxes_1_loc_channel_full_n = SC_LOGIC_0;
     ap_reg_procdone_feature_Loop_memcpy_boundingBoxes_boun_U0 = SC_LOGIC_0;
     ap_reg_procdone_feature_Loop_memset_featureHist_proc1_U0 = SC_LOGIC_0;
     ap_reg_procdone_feature_Loop_memcpy_featureh_featureHi_U0 = SC_LOGIC_0;
@@ -1469,22 +1469,22 @@ feature::feature(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_1, "feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_1");
     sc_trace(mVcdFile, feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_2, "feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_2");
     sc_trace(mVcdFile, feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_3, "feature_Loop_memcpy_boundingBoxes_boun_U0_ap_return_3");
-    sc_trace(mVcdFile, ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_2_loc_channel, "ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_2_loc_channel");
-    sc_trace(mVcdFile, boundingBoxes_2_loc_channel_full_n, "boundingBoxes_2_loc_channel_full_n");
-    sc_trace(mVcdFile, ap_reg_ready_boundingBoxes_2_loc_channel_full_n, "ap_reg_ready_boundingBoxes_2_loc_channel_full_n");
-    sc_trace(mVcdFile, ap_sig_ready_boundingBoxes_2_loc_channel_full_n, "ap_sig_ready_boundingBoxes_2_loc_channel_full_n");
-    sc_trace(mVcdFile, ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_1_loc_channel, "ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_1_loc_channel");
-    sc_trace(mVcdFile, boundingBoxes_1_loc_channel_full_n, "boundingBoxes_1_loc_channel_full_n");
-    sc_trace(mVcdFile, ap_reg_ready_boundingBoxes_1_loc_channel_full_n, "ap_reg_ready_boundingBoxes_1_loc_channel_full_n");
-    sc_trace(mVcdFile, ap_sig_ready_boundingBoxes_1_loc_channel_full_n, "ap_sig_ready_boundingBoxes_1_loc_channel_full_n");
     sc_trace(mVcdFile, ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_0_loc_channel, "ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_0_loc_channel");
     sc_trace(mVcdFile, boundingBoxes_0_loc_channel_full_n, "boundingBoxes_0_loc_channel_full_n");
     sc_trace(mVcdFile, ap_reg_ready_boundingBoxes_0_loc_channel_full_n, "ap_reg_ready_boundingBoxes_0_loc_channel_full_n");
     sc_trace(mVcdFile, ap_sig_ready_boundingBoxes_0_loc_channel_full_n, "ap_sig_ready_boundingBoxes_0_loc_channel_full_n");
+    sc_trace(mVcdFile, ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_2_loc_channel, "ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_2_loc_channel");
+    sc_trace(mVcdFile, boundingBoxes_2_loc_channel_full_n, "boundingBoxes_2_loc_channel_full_n");
+    sc_trace(mVcdFile, ap_reg_ready_boundingBoxes_2_loc_channel_full_n, "ap_reg_ready_boundingBoxes_2_loc_channel_full_n");
+    sc_trace(mVcdFile, ap_sig_ready_boundingBoxes_2_loc_channel_full_n, "ap_sig_ready_boundingBoxes_2_loc_channel_full_n");
     sc_trace(mVcdFile, ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_3_loc_channel, "ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_3_loc_channel");
     sc_trace(mVcdFile, boundingBoxes_3_loc_channel_full_n, "boundingBoxes_3_loc_channel_full_n");
     sc_trace(mVcdFile, ap_reg_ready_boundingBoxes_3_loc_channel_full_n, "ap_reg_ready_boundingBoxes_3_loc_channel_full_n");
     sc_trace(mVcdFile, ap_sig_ready_boundingBoxes_3_loc_channel_full_n, "ap_sig_ready_boundingBoxes_3_loc_channel_full_n");
+    sc_trace(mVcdFile, ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_1_loc_channel, "ap_chn_write_feature_Loop_memcpy_boundingBoxes_boun_U0_boundingBoxes_1_loc_channel");
+    sc_trace(mVcdFile, boundingBoxes_1_loc_channel_full_n, "boundingBoxes_1_loc_channel_full_n");
+    sc_trace(mVcdFile, ap_reg_ready_boundingBoxes_1_loc_channel_full_n, "ap_reg_ready_boundingBoxes_1_loc_channel_full_n");
+    sc_trace(mVcdFile, ap_sig_ready_boundingBoxes_1_loc_channel_full_n, "ap_sig_ready_boundingBoxes_1_loc_channel_full_n");
     sc_trace(mVcdFile, feature_Loop_memset_featureHist_proc1_U0_ap_start, "feature_Loop_memset_featureHist_proc1_U0_ap_start");
     sc_trace(mVcdFile, feature_Loop_memset_featureHist_proc1_U0_ap_done, "feature_Loop_memset_featureHist_proc1_U0_ap_done");
     sc_trace(mVcdFile, feature_Loop_memset_featureHist_proc1_U0_ap_continue, "feature_Loop_memset_featureHist_proc1_U0_ap_continue");
@@ -2090,10 +2090,10 @@ void feature::thread_feature_CRTL_BUS_s_axi_U_ap_dummy_ce() {
 }
 
 void feature::thread_feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue() {
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_2_loc_channel_full_n.read()) && 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_1_loc_channel_full_n.read()) && 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_0_loc_channel_full_n.read()) && 
-         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_3_loc_channel_full_n.read()))) {
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_0_loc_channel_full_n.read()) && 
+         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_2_loc_channel_full_n.read()) && 
+         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_3_loc_channel_full_n.read()) && 
+         esl_seteq<1,1,1>(ap_const_logic_1, ap_sig_ready_boundingBoxes_1_loc_channel_full_n.read()))) {
         feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue = ap_const_logic_1;
     } else {
         feature_Loop_memcpy_boundingBoxes_boun_U0_ap_continue = ap_const_logic_0;

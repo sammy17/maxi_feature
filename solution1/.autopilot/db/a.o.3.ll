@@ -1,4 +1,4 @@
-; ModuleID = '/home/zynq-fyp/Desktop/maxi_final_180112/maxi_feature/solution1/.autopilot/db/a.o.3.bc'
+; ModuleID = '/home/chathura/Desktop/maxi_final_180113/maxi_feature/solution1/.autopilot/db/a.o.3.bc'
 target datalayout = "e-p:64:64:64-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-v64:64:64-v128:128:128-a0:0:64-s0:64:64-f80:128:128-n8:16:32:64-S128"
 target triple = "x86_64-unknown-linux-gnu"
 
@@ -23,7 +23,7 @@ target triple = "x86_64-unknown-linux-gnu"
 @p_str4 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str2 = internal unnamed_addr constant [1 x i8] zeroinitializer ; [#uses=1 type=[1 x i8]*]
 @p_str1815 = private unnamed_addr constant [6 x i8] c"DSP48\00", align 1 ; [#uses=8 type=[6 x i8]*]
-@p_str1814 = private unnamed_addr constant [12 x i8] c"hls_label_1\00", align 1 ; [#uses=16 type=[12 x i8]*]
+@p_str1814 = private unnamed_addr constant [12 x i8] c"hls_label_2\00", align 1 ; [#uses=16 type=[12 x i8]*]
 @p_str1812 = private unnamed_addr constant [12 x i8] c"hls_label_0\00", align 1 ; [#uses=2 type=[12 x i8]*]
 @p_str1810 = private unnamed_addr constant [12 x i8] c"RAM_2P_BRAM\00", align 1 ; [#uses=1 type=[12 x i8]*]
 @p_str1809 = private unnamed_addr constant [6 x i8] c"slave\00", align 1 ; [#uses=13 type=[6 x i8]*]
@@ -946,7 +946,7 @@ burst.rd.body.i_ifconv.i.i:                       ; preds = %burst.rd.header.i.i
 !11 = metadata !{metadata !"featureh", metadata !""}
 !12 = metadata !{i32 786689, metadata !13, metadata !"featureh", metadata !14, i32 50331652, metadata !20, i32 0, i32 0} ; [ DW_TAG_arg_variable ]
 !13 = metadata !{i32 786478, i32 0, metadata !14, metadata !"feature", metadata !"feature", metadata !"_Z7featurePhPtS0_", metadata !14, i32 4, metadata !15, i1 false, i1 true, i32 0, i32 0, null, i32 256, i1 false, null, null, null, metadata !23, i32 4} ; [ DW_TAG_subprogram ]
-!14 = metadata !{i32 786473, metadata !"maxi_feature/feature.cpp", metadata !"/home/zynq-fyp/Desktop/maxi_final_180112", null} ; [ DW_TAG_file_type ]
+!14 = metadata !{i32 786473, metadata !"maxi_feature/feature.cpp", metadata !"/home/chathura/Desktop/maxi_final_180113", null} ; [ DW_TAG_file_type ]
 !15 = metadata !{i32 786453, i32 0, metadata !"", i32 0, i32 0, i64 0, i64 0, i64 0, i32 0, null, metadata !16, i32 0, i32 0} ; [ DW_TAG_subroutine_type ]
 !16 = metadata !{null, metadata !17, metadata !20, metadata !20}
 !17 = metadata !{i32 786447, null, metadata !"", null, i32 0, i64 64, i64 64, i64 0, i32 0, metadata !18} ; [ DW_TAG_pointer_type ]

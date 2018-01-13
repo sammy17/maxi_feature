@@ -83,11 +83,12 @@ proc check_tvin_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "c.feature.autotvin_M_OFFSET.dat"
+         "c.feature.autotvin_gmem.dat"
+         "c.feature.autotvin_gmem_offset.dat"
          "c.feature.autotvin_frame_in.dat"
          "c.feature.autotvin_bounding.dat"
          "c.feature.autotvin_featureh.dat"
-         "c.feature.autotvout_M_OFFSET.dat"
+         "c.feature.autotvout_gmem_offset.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {
@@ -112,7 +113,7 @@ proc check_tvout_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "rtl.feature.autotvout_M_OFFSET.dat"
+         "rtl.feature.autotvout_gmem_offset.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {
